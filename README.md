@@ -31,7 +31,7 @@
     Version number
 
 
-_**Schema of each of the endpoints created :**_
+**Schema of each of the endpoints created :**
 
 The response Schemas of each of the endpoints are created and stored under LIB/TEMPLATES/schemas :- 
 
@@ -40,7 +40,7 @@ healthcheck_json_schema.json, version_json_schema.json
 
 The response from each of the API endpoint methods are validated against these schemas
 
-**_Library_**
+**Library**
 
 _RestConnection.py :_ 
 
@@ -61,7 +61,7 @@ _requirement :_ pip install -r LIB/requirements.txt
 _Robot Files :_ Categories_Endpoint_TestSuite.robot, Products_Endpoint_TestSuite.robot, Services_Endpoint_TestSuite.robot,
 Stores_Endpoint_TestSuite.robot, Functional_Tests.robot
 
-**_To Run Tests_**
+**To Run Tests**
 
 change directory to : /varun-umesh
 
