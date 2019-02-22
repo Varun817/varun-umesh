@@ -4,31 +4,31 @@
 
 **_/products :_** 
 
-    Find    -   GET |
-    create  -   POST |
-    update  -   PATCH |
-    remove  -   DELETE |
+    Find    -   GET 
+    create  -   POST 
+    update  -   PATCH 
+    remove  -   DELETE 
     
 **_/stores :_** 
 
-    Find    -   GET |
-    create  -   POST |
-    update  -   PATCH |
-    remove  -   DELETE |
+    Find    -   GET 
+    create  -   POST 
+    update  -   PATCH 
+    remove  -   DELETE 
     
 **_/services :_** 
 
-    Find    -   GET |
-    create  -   POST |
-    update  -   PATCH |
-    remove  -   DELETE |
+    Find    -   GET 
+    create  -   POST 
+    update  -   PATCH 
+    remove  -   DELETE 
     
 **_/categories :_** 
 
-    Find    -   GET |
-    create  -   POST |
-    update  -   PATCH |
-    remove  -   DELETE |
+    Find    -   GET 
+    create  -   POST 
+    update  -   PATCH 
+    remove  -   DELETE 
     
 **_/utilities :_**
  
