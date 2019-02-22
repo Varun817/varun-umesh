@@ -68,3 +68,11 @@ change directory to : /varun-umesh
 _Run command :_ export PYTHONPATH=.
 
 Command to run Tests : robot -i rest_api_tests -d Results -b debug.txt TESTSUITES/*
+
+
+*Test Results*
+
+Test Results will be generated under - "Results" folder and will possess the debufile : debug.txt, and the Robot report 
+related files : report.html, log.html, output.xml
+
+A folder named - "Test_Report" has been added with all the Test reports and debug files of a successful run for reference.
