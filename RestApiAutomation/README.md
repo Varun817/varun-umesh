@@ -3,30 +3,35 @@
 **API Endpoints to be Validated :-**
 
 **_/products :_** 
+
     Find    -   GET |
     create  -   POST |
     update  -   PATCH |
     remove  -   DELETE |
     
 **_/stores :_** 
+
     Find    -   GET |
     create  -   POST |
     update  -   PATCH |
     remove  -   DELETE |
     
 **_/services :_** 
+
     Find    -   GET |
     create  -   POST |
     update  -   PATCH |
     remove  -   DELETE |
     
 **_/categories :_** 
+
     Find    -   GET |
     create  -   POST |
     update  -   PATCH |
     remove  -   DELETE |
     
-**_/utilities :_** 
+**_/utilities :_**
+ 
     health Check API |
     Version number
 
