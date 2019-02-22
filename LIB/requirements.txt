@@ -1,5 +1,0 @@
-robotframework
-robotframework-httplibrary
-urllib3
-requests
-jsonschema
