@@ -32,8 +32,8 @@
     
 **_/utilities :_**
  
-    health Check API |
-    Version number
+    health Check API - GET
+    Version number - GET
 
 
 **Schema of each of the endpoints created :**
