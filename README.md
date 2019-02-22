@@ -69,8 +69,14 @@ _Run command :_ export PYTHONPATH=.
 
 Command to run Tests : robot -i rest_api_tests -d Results -b debug.txt TESTSUITES/*
 
+-i <tag> (rest_api_tests)
 
-*Test Results*
+-d <result_folder_path> (Results)
+
+-b <debug_file> (debug.txt) 
+
+
+**Test Results**
 
 Test Results will be generated under - "Results" folder and will possess the debufile : debug.txt, and the Robot report 
 related files : report.html, log.html, output.xml
