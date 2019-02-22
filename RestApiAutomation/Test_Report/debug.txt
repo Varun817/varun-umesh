@@ -1,0 +1,800 @@
+==============================================================================
+20190221 23:59:20.364 - INFO - + START SUITE: Categories Endpoint TestSuite & Functional Tests & Products Endpoint TestSuite & Services Endpoint TestSuite & Stores Endpoint TestSuite [ ]
+==============================================================================
+20190221 23:59:20.446 - INFO - +- START SUITE: Categories Endpoint TestSuite & Functional Tests & Products Endpoint TestSuite & Services Endpoint TestSuite & Stores Endpoint TestSuite.Categories Endpoint TestSuite [ ]
+==============================================================================
+20190221 23:59:20.447 - INFO - +-- START SETUP: Initialize Domain [ ${domain} ]
+20190221 23:59:20.447 - INFO - +--- START KW: RestConnection.Initialize Domain [ ${domain} ]
+20190221 23:59:20.448 - INFO - +--- END KW: RestConnection.Initialize Domain (1)
+20190221 23:59:20.448 - INFO - +-- END SETUP: Initialize Domain (1)
+------------------------------------------------------------------------------
+20190221 23:59:20.448 - INFO - +-- START TEST: Fetch All records - GET | Validate JSON Schema of the Response [ ]
+------------------------------------------------------------------------------
+20190221 23:59:20.449 - INFO - +--- START KW: RestApiTest.Test Api Endpoint [ categories | GET ]
+20190221 23:59:20.449 - DEBUG - GET http://localhost:3030/categories
+20190221 23:59:20.498 - INFO - ${result} = True
+20190221 23:59:20.498 - INFO - ${response} = {u'skip': 0, u'total': 4314, u'limit': 10, u'data': [{u'subCategories': [{u'updatedAt': u'2016-11-17T17:57:04.285Z', u'id': u'abcat0020004', u'createdAt': u'2016-11-17T17:57:04.285Z', u'name': u'Uniqu...
+20190221 23:59:20.498 - INFO - +--- END KW: RestApiTest.Test Api Endpoint (49)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+20190221 23:59:20.499 - INFO - +--- START KW: BuiltIn.Run Keyword And Continue On Failure [ should be True | ${result} ]
+20190221 23:59:20.499 - INFO - +---- START KW: BuiltIn.Should Be True [ ${result} ]
+20190221 23:59:20.499 - INFO - +---- END KW: BuiltIn.Should Be True (0)
+20190221 23:59:20.499 - INFO - +--- END KW: BuiltIn.Run Keyword And Continue On Failure (0)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+20190221 23:59:20.499 - INFO - +--- START KW: BuiltIn.Set Test Variable [ ${response_data} | ${response["data"]} ]
+20190221 23:59:20.500 - INFO - ${response_data} = [{u'subCategories': [{u'updatedAt': u'2016-11-17T17:57:04.285Z', u'id': u'abcat0020004', u'createdAt': u'2016-11-17T17:57:04.285Z', u'name': u'Unique Gifts'}, {u'updatedAt': u'2016-11-17T17:57:04.899Z...
+20190221 23:59:20.500 - INFO - +--- END KW: BuiltIn.Set Test Variable (1)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+20190221 23:59:20.500 - INFO - +--- START KW: ${item} IN [ @{response_data} ] [ ]
+20190221 23:59:20.501 - INFO - +---- START KW: ${item} = {u'subCategories': [{u'updatedAt': u'2016-11-17T17:57:04.285Z', u'id': u'abcat0020004', u'createdAt': u'2016-11-17T17:57:04.285Z', u'name': u'Unique Gifts'}, {u'updatedAt': u'2016-11-17T17:57:04.899Z'... [ ]
+20190221 23:59:20.501 - INFO - +----- START KW: RestApiTest.Validate Response With Schema [ categories | ${item} ]
+20190221 23:59:20.502 - INFO - {u'title': u'The Root Schema', u'$id': u'http://example.com/root.json', u'required': [u'name', u'id'], u'definitions': {}, u'$schema': u'http://json-schema.org/draft-06/schema#', u'type': u'object', u'properties': {u'name': {u'title': u'The Name Schema', u'$id': u'#/properties/name', u'pattern': u'^(.*)$', u'default': u'', u'examples': [u'string'], u'type': u'string'}, u'id': {u'title': u'The Id Schema', u'$id': u'#/properties/id', u'pattern': u'^(.*)$', u'default': u'', u'examples': [u'string'], u'type': u'string'}}}
+20190221 23:59:20.502 - INFO - +----- END KW: RestApiTest.Validate Response With Schema (1)
+20190221 23:59:20.502 - INFO - +---- END KW: ${item} = {u'subCategories': [{u'updatedAt': u'2016-11-17T17:57:04.285Z', u'id': u'abcat0020004', u'createdAt': u'2016-11-17T17:57:04.285Z', u'name': u'Unique Gifts'}, {u'updatedAt': u'2016-11-17T17:57:04.899Z'... (1)
+20190221 23:59:20.502 - INFO - +---- START KW: ${item} = {u'subCategories': [], u'name': u'Learning Toys', u'updatedAt': u'2016-11-17T17:57:04.285Z', u'categoryPath': [{u'updatedAt': u'2016-11-17T17:57:04.285Z', u'id': u'abcat0010000', u'createdAt': u'2016-... [ ]
+20190221 23:59:20.502 - INFO - +----- START KW: RestApiTest.Validate Response With Schema [ categories | ${item} ]
+20190221 23:59:20.503 - INFO - {u'title': u'The Root Schema', u'$id': u'http://example.com/root.json', u'required': [u'name', u'id'], u'definitions': {}, u'$schema': u'http://json-schema.org/draft-06/schema#', u'type': u'object', u'properties': {u'name': {u'title': u'The Name Schema', u'$id': u'#/properties/name', u'pattern': u'^(.*)$', u'default': u'', u'examples': [u'string'], u'type': u'string'}, u'id': {u'title': u'The Id Schema', u'$id': u'#/properties/id', u'pattern': u'^(.*)$', u'default': u'', u'examples': [u'string'], u'type': u'string'}}}
+20190221 23:59:20.503 - INFO - +----- END KW: RestApiTest.Validate Response With Schema (1)
+20190221 23:59:20.503 - INFO - +---- END KW: ${item} = {u'subCategories': [], u'name': u'Learning Toys', u'updatedAt': u'2016-11-17T17:57:04.285Z', u'categoryPath': [{u'updatedAt': u'2016-11-17T17:57:04.285Z', u'id': u'abcat0010000', u'createdAt': u'2016-... (1)
+20190221 23:59:20.503 - INFO - +---- START KW: ${item} = {u'subCategories': [], u'name': u'DVD Games', u'updatedAt': u'2016-11-17T17:57:04.285Z', u'categoryPath': [{u'updatedAt': u'2016-11-17T17:57:04.285Z', u'id': u'abcat0010000', u'createdAt': u'2016-11-1... [ ]
+20190221 23:59:20.503 - INFO - +----- START KW: RestApiTest.Validate Response With Schema [ categories | ${item} ]
+20190221 23:59:20.504 - INFO - {u'title': u'The Root Schema', u'$id': u'http://example.com/root.json', u'required': [u'name', u'id'], u'definitions': {}, u'$schema': u'http://json-schema.org/draft-06/schema#', u'type': u'object', u'properties': {u'name': {u'title': u'The Name Schema', u'$id': u'#/properties/name', u'pattern': u'^(.*)$', u'default': u'', u'examples': [u'string'], u'type': u'string'}, u'id': {u'title': u'The Id Schema', u'$id': u'#/properties/id', u'pattern': u'^(.*)$', u'default': u'', u'examples': [u'string'], u'type': u'string'}}}
+20190221 23:59:20.504 - INFO - +----- END KW: RestApiTest.Validate Response With Schema (1)
+20190221 23:59:20.504 - INFO - +---- END KW: ${item} = {u'subCategories': [], u'name': u'DVD Games', u'updatedAt': u'2016-11-17T17:57:04.285Z', u'categoryPath': [{u'updatedAt': u'2016-11-17T17:57:04.285Z', u'id': u'abcat0010000', u'createdAt': u'2016-11-1... (1)
+20190221 23:59:20.504 - INFO - +---- START KW: ${item} = {u'subCategories': [], u'name': u'Unique Gifts', u'updatedAt': u'2016-11-17T17:57:04.285Z', u'categoryPath': [{u'updatedAt': u'2016-11-17T17:57:04.285Z', u'id': u'abcat0010000', u'createdAt': u'2016-1... [ ]
+20190221 23:59:20.504 - INFO - +----- START KW: RestApiTest.Validate Response With Schema [ categories | ${item} ]
+20190221 23:59:20.505 - INFO - {u'title': u'The Root Schema', u'$id': u'http://example.com/root.json', u'required': [u'name', u'id'], u'definitions': {}, u'$schema': u'http://json-schema.org/draft-06/schema#', u'type': u'object', u'properties': {u'name': {u'title': u'The Name Schema', u'$id': u'#/properties/name', u'pattern': u'^(.*)$', u'default': u'', u'examples': [u'string'], u'type': u'string'}, u'id': {u'title': u'The Id Schema', u'$id': u'#/properties/id', u'pattern': u'^(.*)$', u'default': u'', u'examples': [u'string'], u'type': u'string'}}}
+20190221 23:59:20.505 - INFO - +----- END KW: RestApiTest.Validate Response With Schema (1)
+20190221 23:59:20.505 - INFO - +---- END KW: ${item} = {u'subCategories': [], u'name': u'Unique Gifts', u'updatedAt': u'2016-11-17T17:57:04.285Z', u'categoryPath': [{u'updatedAt': u'2016-11-17T17:57:04.285Z', u'id': u'abcat0010000', u'createdAt': u'2016-1... (1)
+20190221 23:59:20.505 - INFO - +---- START KW: ${item} = {u'subCategories': [{u'updatedAt': u'2016-11-17T17:57:04.285Z', u'id': u'abcat0101000', u'createdAt': u'2016-11-17T17:57:04.285Z', u'name': u'TVs'}, {u'updatedAt': u'2016-11-17T17:57:04.285Z', u'id': ... [ ]
+20190221 23:59:20.506 - INFO - +----- START KW: RestApiTest.Validate Response With Schema [ categories | ${item} ]
+20190221 23:59:20.506 - INFO - {u'title': u'The Root Schema', u'$id': u'http://example.com/root.json', u'required': [u'name', u'id'], u'definitions': {}, u'$schema': u'http://json-schema.org/draft-06/schema#', u'type': u'object', u'properties': {u'name': {u'title': u'The Name Schema', u'$id': u'#/properties/name', u'pattern': u'^(.*)$', u'default': u'', u'examples': [u'string'], u'type': u'string'}, u'id': {u'title': u'The Id Schema', u'$id': u'#/properties/id', u'pattern': u'^(.*)$', u'default': u'', u'examples': [u'string'], u'type': u'string'}}}
+20190221 23:59:20.506 - INFO - +----- END KW: RestApiTest.Validate Response With Schema (0)
+20190221 23:59:20.506 - INFO - +---- END KW: ${item} = {u'subCategories': [{u'updatedAt': u'2016-11-17T17:57:04.285Z', u'id': u'abcat0101000', u'createdAt': u'2016-11-17T17:57:04.285Z', u'name': u'TVs'}, {u'updatedAt': u'2016-11-17T17:57:04.285Z', u'id': ... (1)
+20190221 23:59:20.507 - INFO - +---- START KW: ${item} = {u'subCategories': [{u'updatedAt': u'2016-11-17T17:57:04.285Z', u'id': u'abcat0101001', u'createdAt': u'2016-11-17T17:57:04.285Z', u'name': u'All Flat-Panel TVs'}, {u'updatedAt': u'2016-11-17T17:57:04... [ ]
+20190221 23:59:20.507 - INFO - +----- START KW: RestApiTest.Validate Response With Schema [ categories | ${item} ]
+20190221 23:59:20.507 - INFO - {u'title': u'The Root Schema', u'$id': u'http://example.com/root.json', u'required': [u'name', u'id'], u'definitions': {}, u'$schema': u'http://json-schema.org/draft-06/schema#', u'type': u'object', u'properties': {u'name': {u'title': u'The Name Schema', u'$id': u'#/properties/name', u'pattern': u'^(.*)$', u'default': u'', u'examples': [u'string'], u'type': u'string'}, u'id': {u'title': u'The Id Schema', u'$id': u'#/properties/id', u'pattern': u'^(.*)$', u'default': u'', u'examples': [u'string'], u'type': u'string'}}}
+20190221 23:59:20.508 - INFO - +----- END KW: RestApiTest.Validate Response With Schema (0)
+20190221 23:59:20.508 - INFO - +---- END KW: ${item} = {u'subCategories': [{u'updatedAt': u'2016-11-17T17:57:04.285Z', u'id': u'abcat0101001', u'createdAt': u'2016-11-17T17:57:04.285Z', u'name': u'All Flat-Panel TVs'}, {u'updatedAt': u'2016-11-17T17:57:04... (1)
+20190221 23:59:20.508 - INFO - +---- START KW: ${item} = {u'subCategories': [{u'updatedAt': u'2016-11-17T17:57:04.643Z', u'id': u'pcmcat138100050024', u'createdAt': u'2016-11-17T17:57:04.643Z', u'name': u'TV & Home Theater Services'}], u'name': u'All Flat-P... [ ]
+20190221 23:59:20.508 - INFO - +----- START KW: RestApiTest.Validate Response With Schema [ categories | ${item} ]
+20190221 23:59:20.509 - INFO - {u'title': u'The Root Schema', u'$id': u'http://example.com/root.json', u'required': [u'name', u'id'], u'definitions': {}, u'$schema': u'http://json-schema.org/draft-06/schema#', u'type': u'object', u'properties': {u'name': {u'title': u'The Name Schema', u'$id': u'#/properties/name', u'pattern': u'^(.*)$', u'default': u'', u'examples': [u'string'], u'type': u'string'}, u'id': {u'title': u'The Id Schema', u'$id': u'#/properties/id', u'pattern': u'^(.*)$', u'default': u'', u'examples': [u'string'], u'type': u'string'}}}
+20190221 23:59:20.509 - INFO - +----- END KW: RestApiTest.Validate Response With Schema (1)
+20190221 23:59:20.509 - INFO - +---- END KW: ${item} = {u'subCategories': [{u'updatedAt': u'2016-11-17T17:57:04.643Z', u'id': u'pcmcat138100050024', u'createdAt': u'2016-11-17T17:57:04.643Z', u'name': u'TV & Home Theater Services'}], u'name': u'All Flat-P... (1)
+20190221 23:59:20.509 - INFO - +---- START KW: ${item} = {u'subCategories': [{u'updatedAt': u'2016-11-17T17:57:04.285Z', u'id': u'abcat0102003', u'createdAt': u'2016-11-17T17:57:04.285Z', u'name': u'Blu-ray Players'}, {u'updatedAt': u'2016-11-17T17:57:04.28... [ ]
+20190221 23:59:20.509 - INFO - +----- START KW: RestApiTest.Validate Response With Schema [ categories | ${item} ]
+20190221 23:59:20.510 - INFO - {u'title': u'The Root Schema', u'$id': u'http://example.com/root.json', u'required': [u'name', u'id'], u'definitions': {}, u'$schema': u'http://json-schema.org/draft-06/schema#', u'type': u'object', u'properties': {u'name': {u'title': u'The Name Schema', u'$id': u'#/properties/name', u'pattern': u'^(.*)$', u'default': u'', u'examples': [u'string'], u'type': u'string'}, u'id': {u'title': u'The Id Schema', u'$id': u'#/properties/id', u'pattern': u'^(.*)$', u'default': u'', u'examples': [u'string'], u'type': u'string'}}}
+20190221 23:59:20.510 - INFO - +----- END KW: RestApiTest.Validate Response With Schema (1)
+20190221 23:59:20.510 - INFO - +---- END KW: ${item} = {u'subCategories': [{u'updatedAt': u'2016-11-17T17:57:04.285Z', u'id': u'abcat0102003', u'createdAt': u'2016-11-17T17:57:04.285Z', u'name': u'Blu-ray Players'}, {u'updatedAt': u'2016-11-17T17:57:04.28... (1)
+20190221 23:59:20.510 - INFO - +---- START KW: ${item} = {u'subCategories': [{u'updatedAt': u'2016-11-17T17:57:05.399Z', u'id': u'pcmcat205900050012', u'createdAt': u'2016-11-17T17:57:05.399Z', u'name': u'3D Blu-ray Players'}, {u'updatedAt': u'2016-11-17T17... [ ]
+20190221 23:59:20.510 - INFO - +----- START KW: RestApiTest.Validate Response With Schema [ categories | ${item} ]
+20190221 23:59:20.511 - INFO - {u'title': u'The Root Schema', u'$id': u'http://example.com/root.json', u'required': [u'name', u'id'], u'definitions': {}, u'$schema': u'http://json-schema.org/draft-06/schema#', u'type': u'object', u'properties': {u'name': {u'title': u'The Name Schema', u'$id': u'#/properties/name', u'pattern': u'^(.*)$', u'default': u'', u'examples': [u'string'], u'type': u'string'}, u'id': {u'title': u'The Id Schema', u'$id': u'#/properties/id', u'pattern': u'^(.*)$', u'default': u'', u'examples': [u'string'], u'type': u'string'}}}
+20190221 23:59:20.511 - INFO - +----- END KW: RestApiTest.Validate Response With Schema (1)
+20190221 23:59:20.511 - INFO - +---- END KW: ${item} = {u'subCategories': [{u'updatedAt': u'2016-11-17T17:57:05.399Z', u'id': u'pcmcat205900050012', u'createdAt': u'2016-11-17T17:57:05.399Z', u'name': u'3D Blu-ray Players'}, {u'updatedAt': u'2016-11-17T17... (1)
+20190221 23:59:20.511 - INFO - +---- START KW: ${item} = {u'subCategories': [{u'updatedAt': u'2016-11-17T17:57:04.643Z', u'id': u'pcmcat138100050024', u'createdAt': u'2016-11-17T17:57:04.643Z', u'name': u'TV & Home Theater Services'}], u'name': u'DVD Player... [ ]
+20190221 23:59:20.511 - INFO - +----- START KW: RestApiTest.Validate Response With Schema [ categories | ${item} ]
+20190221 23:59:20.512 - INFO - {u'title': u'The Root Schema', u'$id': u'http://example.com/root.json', u'required': [u'name', u'id'], u'definitions': {}, u'$schema': u'http://json-schema.org/draft-06/schema#', u'type': u'object', u'properties': {u'name': {u'title': u'The Name Schema', u'$id': u'#/properties/name', u'pattern': u'^(.*)$', u'default': u'', u'examples': [u'string'], u'type': u'string'}, u'id': {u'title': u'The Id Schema', u'$id': u'#/properties/id', u'pattern': u'^(.*)$', u'default': u'', u'examples': [u'string'], u'type': u'string'}}}
+20190221 23:59:20.512 - INFO - +----- END KW: RestApiTest.Validate Response With Schema (1)
+20190221 23:59:20.512 - INFO - +---- END KW: ${item} = {u'subCategories': [{u'updatedAt': u'2016-11-17T17:57:04.643Z', u'id': u'pcmcat138100050024', u'createdAt': u'2016-11-17T17:57:04.643Z', u'name': u'TV & Home Theater Services'}], u'name': u'DVD Player... (1)
+20190221 23:59:20.512 - INFO - +--- END KW: ${item} IN [ @{response_data} ] (12)
+------------------------------------------------------------------------------
+20190221 23:59:20.512 - INFO - +-- END TEST: Fetch All records - GET | Validate JSON Schema of the Response (64)
+------------------------------------------------------------------------------
+20190221 23:59:20.513 - INFO - +-- START TEST: Create , Fetch, Update and Delete New record - POST, GET, PATCH, DELETE | Validate JSON Schema of each of the Responses [ ]
+------------------------------------------------------------------------------
+20190221 23:59:20.513 - INFO - +--- START KW: String.Generate Random String [ 8 | [LETTERS] ]
+20190221 23:59:20.513 - INFO - ${random_id} = JKqNarYl
+20190221 23:59:20.513 - INFO - +--- END KW: String.Generate Random String (0)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+20190221 23:59:20.514 - INFO - +--- START KW: BuiltIn.Log To Console [ ${random_id} ]
+20190221 23:59:20.514 - INFO - +--- END KW: BuiltIn.Log To Console (0)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+20190221 23:59:20.514 - INFO - +--- START KW: BuiltIn.Set Test Variable [ ${product} | {"id": "${random_id}", "name": "Test Category created"} ]
+20190221 23:59:20.515 - INFO - ${product} = {"id": "JKqNarYl", "name": "Test Category created"}
+20190221 23:59:20.515 - INFO - +--- END KW: BuiltIn.Set Test Variable (1)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+20190221 23:59:20.515 - INFO - +--- START KW: RestApiTest.Test Api Endpoint [ categories | POST | {} | ${product} ]
+20190221 23:59:20.515 - DEBUG - POST http://localhost:3030/categories
+20190221 23:59:20.524 - INFO - ${result} = True
+20190221 23:59:20.525 - INFO - ${created_product_response} = {u'updatedAt': u'2019-02-21T18:29:20.521Z', u'id': u'JKqNarYl', u'createdAt': u'2019-02-21T18:29:20.521Z', u'name': u'Test Category created'}
+20190221 23:59:20.525 - INFO - +--- END KW: RestApiTest.Test Api Endpoint (10)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+20190221 23:59:20.525 - INFO - +--- START KW: BuiltIn.Set Test Variable [ ${id} | ${created_product_response["id"]} ]
+20190221 23:59:20.526 - INFO - ${id} = JKqNarYl
+20190221 23:59:20.527 - INFO - +--- END KW: BuiltIn.Set Test Variable (1)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+20190221 23:59:20.527 - INFO - +--- START KW: BuiltIn.Run Keyword And Continue On Failure [ should be True | ${result} ]
+20190221 23:59:20.527 - INFO - +---- START KW: BuiltIn.Should Be True [ ${result} ]
+20190221 23:59:20.527 - INFO - +---- END KW: BuiltIn.Should Be True (0)
+20190221 23:59:20.527 - INFO - +--- END KW: BuiltIn.Run Keyword And Continue On Failure (0)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+20190221 23:59:20.527 - INFO - +--- START KW: RestApiTest.Test Api Endpoint [ categories/${id} | GET ]
+20190221 23:59:20.528 - DEBUG - GET http://localhost:3030/categories/JKqNarYl
+20190221 23:59:20.534 - INFO - ${result} = True
+20190221 23:59:20.534 - INFO - ${response} = {u'subCategories': [], u'name': u'Test Category created', u'updatedAt': u'2019-02-21T18:29:20.521Z', u'categoryPath': [], u'id': u'JKqNarYl', u'createdAt': u'2019-02-21T18:29:20.521Z'}
+20190221 23:59:20.534 - INFO - +--- END KW: RestApiTest.Test Api Endpoint (7)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+20190221 23:59:20.534 - INFO - +--- START KW: BuiltIn.Run Keyword And Continue On Failure [ should be True | ${result} ]
+20190221 23:59:20.535 - INFO - +---- START KW: BuiltIn.Should Be True [ ${result} ]
+20190221 23:59:20.535 - INFO - +---- END KW: BuiltIn.Should Be True (0)
+20190221 23:59:20.535 - INFO - +--- END KW: BuiltIn.Run Keyword And Continue On Failure (1)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+20190221 23:59:20.535 - INFO - +--- START KW: RestApiTest.Validate Response With Schema [ categories | ${response} ]
+20190221 23:59:20.536 - INFO - {u'title': u'The Root Schema', u'$id': u'http://example.com/root.json', u'required': [u'name', u'id'], u'definitions': {}, u'$schema': u'http://json-schema.org/draft-06/schema#', u'type': u'object', u'properties': {u'name': {u'title': u'The Name Schema', u'$id': u'#/properties/name', u'pattern': u'^(.*)$', u'default': u'', u'examples': [u'string'], u'type': u'string'}, u'id': {u'title': u'The Id Schema', u'$id': u'#/properties/id', u'pattern': u'^(.*)$', u'default': u'', u'examples': [u'string'], u'type': u'string'}}}
+20190221 23:59:20.536 - INFO - +--- END KW: RestApiTest.Validate Response With Schema (1)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+20190221 23:59:20.536 - INFO - +--- START KW: BuiltIn.Set Test Variable [ ${updated_product} | {"name": "Test Update New category"} ]
+20190221 23:59:20.537 - INFO - ${updated_product} = {"name": "Test Update New category"}
+20190221 23:59:20.537 - INFO - +--- END KW: BuiltIn.Set Test Variable (1)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+20190221 23:59:20.537 - INFO - +--- START KW: RestApiTest.Test Api Endpoint [ categories/${id} | PATCH | {} | ${updated_product} ]
+20190221 23:59:20.537 - DEBUG - PATCH http://localhost:3030/categories/JKqNarYl
+20190221 23:59:20.542 - INFO - ${result} = True
+20190221 23:59:20.542 - INFO - ${response} = {u'updatedAt': u'2019-02-21T18:29:20.538Z', u'id': u'JKqNarYl', u'createdAt': u'2019-02-21T18:29:20.521Z', u'name': u'Test Update New category'}
+20190221 23:59:20.542 - INFO - +--- END KW: RestApiTest.Test Api Endpoint (5)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+20190221 23:59:20.543 - INFO - +--- START KW: BuiltIn.Run Keyword And Continue On Failure [ should be True | ${result} ]
+20190221 23:59:20.543 - INFO - +---- START KW: BuiltIn.Should Be True [ ${result} ]
+20190221 23:59:20.543 - INFO - +---- END KW: BuiltIn.Should Be True (0)
+20190221 23:59:20.543 - INFO - +--- END KW: BuiltIn.Run Keyword And Continue On Failure (0)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+20190221 23:59:20.544 - INFO - +--- START KW: RestApiTest.Validate Response With Schema [ categories | ${response} ]
+20190221 23:59:20.545 - INFO - {u'title': u'The Root Schema', u'$id': u'http://example.com/root.json', u'required': [u'name', u'id'], u'definitions': {}, u'$schema': u'http://json-schema.org/draft-06/schema#', u'type': u'object', u'properties': {u'name': {u'title': u'The Name Schema', u'$id': u'#/properties/name', u'pattern': u'^(.*)$', u'default': u'', u'examples': [u'string'], u'type': u'string'}, u'id': {u'title': u'The Id Schema', u'$id': u'#/properties/id', u'pattern': u'^(.*)$', u'default': u'', u'examples': [u'string'], u'type': u'string'}}}
+20190221 23:59:20.545 - INFO - +--- END KW: RestApiTest.Validate Response With Schema (1)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+20190221 23:59:20.545 - INFO - +--- START KW: RestApiTest.Test Api Endpoint [ categories/${id} | DELETE ]
+20190221 23:59:20.545 - DEBUG - DELETE http://localhost:3030/categories/JKqNarYl
+20190221 23:59:20.593 - INFO - ${result} = True
+20190221 23:59:20.593 - INFO - ${response} = {u'updatedAt': u'2019-02-21T18:29:20.538Z', u'id': u'JKqNarYl', u'createdAt': u'2019-02-21T18:29:20.521Z', u'name': u'Test Update New category'}
+20190221 23:59:20.593 - INFO - +--- END KW: RestApiTest.Test Api Endpoint (48)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+20190221 23:59:20.593 - INFO - +--- START KW: BuiltIn.Run Keyword And Continue On Failure [ should be True | ${result} ]
+20190221 23:59:20.593 - INFO - +---- START KW: BuiltIn.Should Be True [ ${result} ]
+20190221 23:59:20.594 - INFO - +---- END KW: BuiltIn.Should Be True (1)
+20190221 23:59:20.594 - INFO - +--- END KW: BuiltIn.Run Keyword And Continue On Failure (1)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+20190221 23:59:20.594 - INFO - +--- START KW: RestApiTest.Test Api Endpoint [ categories/${id} | GET ]
+20190221 23:59:20.594 - DEBUG - GET http://localhost:3030/categories/JKqNarYl
+20190221 23:59:20.598 - INFO - ${result} = True
+20190221 23:59:20.598 - INFO - ${response} = {u'className': u'not-found', u'errors': {}, u'message': u"No record found for id 'JKqNarYl'", u'code': 404, u'name': u'NotFound'}
+20190221 23:59:20.598 - INFO - +--- END KW: RestApiTest.Test Api Endpoint (4)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+20190221 23:59:20.599 - INFO - +--- START KW: BuiltIn.Run Keyword And Continue On Failure [ should be True | ${result} ]
+20190221 23:59:20.599 - INFO - +---- START KW: BuiltIn.Should Be True [ ${result} ]
+20190221 23:59:20.599 - INFO - +---- END KW: BuiltIn.Should Be True (0)
+20190221 23:59:20.599 - INFO - +--- END KW: BuiltIn.Run Keyword And Continue On Failure (0)
+------------------------------------------------------------------------------
+20190221 23:59:20.599 - INFO - +-- END TEST: Create , Fetch, Update and Delete New record - POST, GET, PATCH, DELETE | Validate JSON Schema of each of the Responses (86)
+------------------------------------------------------------------------------
+20190221 23:59:20.600 - INFO - +- END SUITE: Categories Endpoint TestSuite & Functional Tests & Products Endpoint TestSuite & Services Endpoint TestSuite & Stores Endpoint TestSuite.Categories Endpoint TestSuite (236)
+==============================================================================
+20190221 23:59:20.603 - INFO - +- START SUITE: Categories Endpoint TestSuite & Functional Tests & Products Endpoint TestSuite & Services Endpoint TestSuite & Stores Endpoint TestSuite.Functional Tests [ ]
+==============================================================================
+20190221 23:59:20.604 - INFO - +-- START SETUP: Initialize Domain [ ${domain} ]
+20190221 23:59:20.604 - INFO - +--- START KW: RestConnection.Initialize Domain [ ${domain} ]
+20190221 23:59:20.604 - INFO - +--- END KW: RestConnection.Initialize Domain (0)
+20190221 23:59:20.604 - INFO - +-- END SETUP: Initialize Domain (0)
+------------------------------------------------------------------------------
+20190221 23:59:20.605 - INFO - +-- START TEST: Fetch Highest Priced Products [ ]
+------------------------------------------------------------------------------
+20190221 23:59:20.605 - INFO - +--- START KW: RestApiTest.Test Api Endpoint [ products | GET | {"$sort[price]":"-1"} ]
+20190221 23:59:20.605 - DEBUG - GET http://localhost:3030/products
+20190221 23:59:20.772 - INFO - ${result} = True
+20190221 23:59:20.772 - INFO - ${response} = {u'skip': 0, u'total': 51977, u'limit': 10, u'data': [{u'name': u'Sony - ES SXRD 3D-Ready 4K Home Theater Projector - Black', u'url': u'http://www.bestbuy.com/site/sony-es-sxrd-3d-ready-4k-home-theate...
+20190221 23:59:20.772 - INFO - +--- END KW: RestApiTest.Test Api Endpoint (167)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+20190221 23:59:20.772 - INFO - +--- START KW: BuiltIn.Should Be True [ ${result} ]
+20190221 23:59:20.772 - INFO - +--- END KW: BuiltIn.Should Be True (0)
+------------------------------------------------------------------------------
+20190221 23:59:20.773 - INFO - +-- END TEST: Fetch Highest Priced Products (169)
+------------------------------------------------------------------------------
+20190221 23:59:20.773 - INFO - +-- START TEST: Product Name and Description Only [ ]
+------------------------------------------------------------------------------
+20190221 23:59:20.773 - INFO - +--- START KW: RestApiTest.Test Api Endpoint [ products | GET | {"$select[]":["name","description"]} ]
+20190221 23:59:20.774 - DEBUG - GET http://localhost:3030/products
+20190221 23:59:20.796 - INFO - ${result} = True
+20190221 23:59:20.796 - INFO - ${response} = {u'skip': 0, u'total': 51977, u'limit': 10, u'data': [{u'name': u'Duracell - AA 1.5V CopperTop Batteries (4-Pack)', u'description': u'Long-lasting energy; DURALOCK Power Preserve technology; for toys,...
+20190221 23:59:20.796 - INFO - +--- END KW: RestApiTest.Test Api Endpoint (23)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+20190221 23:59:20.796 - INFO - +--- START KW: BuiltIn.Should Be True [ ${result} ]
+20190221 23:59:20.796 - INFO - +--- END KW: BuiltIn.Should Be True (0)
+------------------------------------------------------------------------------
+20190221 23:59:20.797 - INFO - +-- END TEST: Product Name and Description Only (24)
+------------------------------------------------------------------------------
+20190221 23:59:20.797 - INFO - +-- START TEST: TVs with free shipping and price between $500 and $800 [ ]
+------------------------------------------------------------------------------
+20190221 23:59:20.797 - INFO - +--- START KW: RestApiTest.Test Api Endpoint [ products | GET | {"category.name":"TVs","price[$gt]":"500","price[$lt]":"800","shipping[$eq]":"0"} ]
+20190221 23:59:20.798 - DEBUG - GET http://localhost:3030/products
+20190221 23:59:20.990 - INFO - ${result} = True
+20190221 23:59:20.990 - INFO - ${response} = {u'skip': 0, u'total': 29, u'limit': 10, u'data': [{u'name': u'Sony - 43" Class (42.5" Diag.) - LED - 2160p - Smart - 4K Ultra HD TV - Black', u'url': u'http://www.bestbuy.com/site/sony-43-class-42-5-...
+20190221 23:59:20.990 - INFO - +--- END KW: RestApiTest.Test Api Endpoint (193)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+20190221 23:59:20.990 - INFO - +--- START KW: BuiltIn.Should Be True [ ${result} ]
+20190221 23:59:20.991 - INFO - +--- END KW: BuiltIn.Should Be True (1)
+------------------------------------------------------------------------------
+20190221 23:59:20.991 - INFO - +-- END TEST: TVs with free shipping and price between $500 and $800 (194)
+------------------------------------------------------------------------------
+20190221 23:59:20.991 - INFO - +-- START TEST: Categories with TV in the name [ ]
+------------------------------------------------------------------------------
+20190221 23:59:20.992 - INFO - +--- START KW: RestApiTest.Test Api Endpoint [ categories | GET | {"name[$like]":"*TV*"} ]
+20190221 23:59:20.992 - DEBUG - GET http://localhost:3030/categories
+20190221 23:59:21.010 - INFO - ${result} = True
+20190221 23:59:21.010 - INFO - ${response} = {u'skip': 0, u'total': 132, u'limit': 10, u'data': [{u'subCategories': [{u'updatedAt': u'2016-11-17T17:57:04.285Z', u'id': u'abcat0101000', u'createdAt': u'2016-11-17T17:57:04.285Z', u'name': u'TVs'},...
+20190221 23:59:21.010 - INFO - +--- END KW: RestApiTest.Test Api Endpoint (18)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+20190221 23:59:21.010 - INFO - +--- START KW: BuiltIn.Should Be True [ ${result} ]
+20190221 23:59:21.011 - INFO - +--- END KW: BuiltIn.Should Be True (1)
+------------------------------------------------------------------------------
+20190221 23:59:21.011 - INFO - +-- END TEST: Categories with TV in the name (20)
+------------------------------------------------------------------------------
+20190221 23:59:21.011 - INFO - +-- START TEST: Find stores in Minnesota [ ]
+------------------------------------------------------------------------------
+20190221 23:59:21.012 - INFO - +--- START KW: RestApiTest.Test Api Endpoint [ stores | GET | {"state":"MN"} ]
+20190221 23:59:21.012 - DEBUG - GET http://localhost:3030/stores
+20190221 23:59:21.035 - INFO - ${result} = True
+20190221 23:59:21.035 - INFO - ${response} = {u'skip': 0, u'total': 70, u'limit': 10, u'data': [{u'city': u'Hopkins', u'name': u'Minnetonka', u'zip': u'55305', u'address2': u'', u'updatedAt': u'2016-11-17T17:57:05.708Z', u'hours': u'Mon: 10-9; T...
+20190221 23:59:21.035 - INFO - +--- END KW: RestApiTest.Test Api Endpoint (23)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+20190221 23:59:21.036 - INFO - +--- START KW: BuiltIn.Should Be True [ ${result} ]
+20190221 23:59:21.036 - INFO - +--- END KW: BuiltIn.Should Be True (0)
+------------------------------------------------------------------------------
+20190221 23:59:21.036 - INFO - +-- END TEST: Find stores in Minnesota (25)
+------------------------------------------------------------------------------
+20190221 23:59:21.036 - INFO - +-- START TEST: Find stores that sell Apple products [ ]
+------------------------------------------------------------------------------
+20190221 23:59:21.037 - INFO - +--- START KW: RestApiTest.Test Api Endpoint [ stores | GET | {"service.name":"Apple Shop"} ]
+20190221 23:59:21.037 - DEBUG - GET http://localhost:3030/stores
+20190221 23:59:21.060 - INFO - ${result} = True
+20190221 23:59:21.060 - INFO - ${response} = {u'skip': 0, u'total': 756, u'limit': 10, u'data': [{u'city': u'Hopkins', u'name': u'Minnetonka', u'zip': u'55305', u'address2': u'', u'updatedAt': u'2016-11-17T17:57:05.708Z', u'hours': u'Mon: 10-9; ...
+20190221 23:59:21.061 - INFO - +--- END KW: RestApiTest.Test Api Endpoint (23)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+20190221 23:59:21.061 - INFO - +--- START KW: BuiltIn.Should Be True [ ${result} ]
+20190221 23:59:21.061 - INFO - +--- END KW: BuiltIn.Should Be True (0)
+------------------------------------------------------------------------------
+20190221 23:59:21.062 - INFO - +-- END TEST: Find stores that sell Apple products (25)
+------------------------------------------------------------------------------
+20190221 23:59:21.062 - INFO - +-- START TEST: Find Stores Within 10 Miles of Beverly Hills [ ]
+------------------------------------------------------------------------------
+20190221 23:59:21.062 - INFO - +--- START KW: RestApiTest.Test Api Endpoint [ stores | GET | {"near":"90210","service.name":"Windows%20Store"} ]
+20190221 23:59:21.062 - DEBUG - GET http://localhost:3030/stores
+20190221 23:59:21.068 - INFO - ${result} = True
+20190221 23:59:21.068 - INFO - ${response} = {u'skip': 0, u'total': 0, u'limit': 10, u'data': []}
+20190221 23:59:21.068 - INFO - +--- END KW: RestApiTest.Test Api Endpoint (6)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+20190221 23:59:21.068 - INFO - +--- START KW: BuiltIn.Should Be True [ ${result} ]
+20190221 23:59:21.069 - INFO - +--- END KW: BuiltIn.Should Be True (1)
+------------------------------------------------------------------------------
+20190221 23:59:21.069 - INFO - +-- END TEST: Find Stores Within 10 Miles of Beverly Hills (7)
+------------------------------------------------------------------------------
+20190221 23:59:21.069 - INFO - +-- START TEST: Validate Health Check Api [ ]
+------------------------------------------------------------------------------
+20190221 23:59:21.070 - INFO - +--- START KW: RestApiTest.Test Api Endpoint [ healthcheck | GET ]
+20190221 23:59:21.070 - DEBUG - GET http://localhost:3030/healthcheck
+20190221 23:59:21.092 - INFO - ${result} = True
+20190221 23:59:21.092 - INFO - ${response} = {u'uptime': 33607.769, u'documents': {u'stores': 1587, u'products': 51977, u'categories': 4314}, u'readonly': False}
+20190221 23:59:21.093 - INFO - +--- END KW: RestApiTest.Test Api Endpoint (23)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+20190221 23:59:21.093 - INFO - +--- START KW: BuiltIn.Run Keyword And Continue On Failure [ should be True | ${result} ]
+20190221 23:59:21.093 - INFO - +---- START KW: BuiltIn.Should Be True [ ${result} ]
+20190221 23:59:21.093 - INFO - +---- END KW: BuiltIn.Should Be True (0)
+20190221 23:59:21.094 - INFO - +--- END KW: BuiltIn.Run Keyword And Continue On Failure (0)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+20190221 23:59:21.094 - INFO - +--- START KW: RestApiTest.Validate Response With Schema [ healthcheck | ${response} ]
+20190221 23:59:21.095 - INFO - {u'title': u'The Root Schema', u'$id': u'http://example.com/root.json', u'required': [u'uptime', u'readonly', u'documents'], u'definitions': {}, u'$schema': u'http://json-schema.org/draft-07/schema#', u'type': u'object', u'properties': {u'uptime': {u'$id': u'#/properties/uptime', u'default': 0.0, u'type': u'number', u'examples': [26675.762], u'title': u'The Uptime Schema'}, u'documents': {u'$id': u'#/properties/documents', u'required': [u'products', u'stores', u'categories'], u'type': u'object', u'properties': {u'stores': {u'$id': u'#/properties/documents/properties/stores', u'default': 0, u'type': u'integer', u'examples': [1586], u'title': u'The Stores Schema'}, u'products': {u'$id': u'#/properties/documents/properties/products', u'default': 0, u'type': u'integer', u'examples': [51977], u'title': u'The Products Schema'}, u'categories': {u'$id': u'#/properties/documents/properties/categories', u'default': 0, u'type': u'integer', u'examples': [4314], u'title': u'The Categories Schema'}}, u'title': u'The Documents Schema'}, u'readonly': {u'$id': u'#/properties/readonly', u'default': False, u'type': u'boolean', u'examples': [False], u'title': u'The Readonly Schema'}}}
+20190221 23:59:21.095 - INFO - +--- END KW: RestApiTest.Validate Response With Schema (1)
+------------------------------------------------------------------------------
+20190221 23:59:21.095 - INFO - +-- END TEST: Validate Health Check Api (26)
+------------------------------------------------------------------------------
+20190221 23:59:21.096 - INFO - +-- START TEST: Validate version Api [ ]
+------------------------------------------------------------------------------
+20190221 23:59:21.096 - INFO - +--- START KW: RestApiTest.Test Api Endpoint [ version | GET ]
+20190221 23:59:21.096 - DEBUG - GET http://localhost:3030/version
+20190221 23:59:21.098 - INFO - ${result} = True
+20190221 23:59:21.098 - INFO - ${response} = {u'version': u'1.1.0'}
+20190221 23:59:21.098 - INFO - +--- END KW: RestApiTest.Test Api Endpoint (2)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+20190221 23:59:21.098 - INFO - +--- START KW: BuiltIn.Should Be True [ ${result} ]
+20190221 23:59:21.099 - INFO - +--- END KW: BuiltIn.Should Be True (1)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+20190221 23:59:21.099 - INFO - +--- START KW: RestApiTest.Validate Response With Schema [ version | ${response} ]
+20190221 23:59:21.100 - INFO - {u'title': u'The Root Schema', u'$id': u'http://example.com/root.json', u'required': [u'version'], u'definitions': {}, u'$schema': u'http://json-schema.org/draft-06/schema#', u'type': u'object', u'properties': {u'version': {u'title': u'The Version Schema', u'$id': u'#/properties/version', u'pattern': u'^(.*)$', u'default': u'', u'examples': [u'1.1.0'], u'type': u'string'}}}
+20190221 23:59:21.100 - INFO - +--- END KW: RestApiTest.Validate Response With Schema (1)
+------------------------------------------------------------------------------
+20190221 23:59:21.100 - INFO - +-- END TEST: Validate version Api (5)
+------------------------------------------------------------------------------
+20190221 23:59:21.101 - INFO - +- END SUITE: Categories Endpoint TestSuite & Functional Tests & Products Endpoint TestSuite & Services Endpoint TestSuite & Stores Endpoint TestSuite.Functional Tests (500)
+==============================================================================
+20190221 23:59:21.104 - INFO - +- START SUITE: Categories Endpoint TestSuite & Functional Tests & Products Endpoint TestSuite & Services Endpoint TestSuite & Stores Endpoint TestSuite.Products Endpoint TestSuite [ ]
+==============================================================================
+20190221 23:59:21.105 - INFO - +-- START SETUP: Initialize Domain [ ${domain} ]
+20190221 23:59:21.105 - INFO - +--- START KW: RestConnection.Initialize Domain [ ${domain} ]
+20190221 23:59:21.106 - INFO - +--- END KW: RestConnection.Initialize Domain (1)
+20190221 23:59:21.106 - INFO - +-- END SETUP: Initialize Domain (1)
+------------------------------------------------------------------------------
+20190221 23:59:21.107 - INFO - +-- START TEST: Fetch All records - GET | Validate JSON Schema of the Response [ ]
+------------------------------------------------------------------------------
+20190221 23:59:21.107 - INFO - +--- START KW: RestApiTest.Test Api Endpoint [ products | GET ]
+20190221 23:59:21.108 - DEBUG - GET http://localhost:3030/products
+20190221 23:59:21.240 - INFO - ${result} = True
+20190221 23:59:21.241 - INFO - ${response} = {u'skip': 0, u'total': 51977, u'limit': 10, u'data': [{u'name': u'Duracell - AA 1.5V CopperTop Batteries (4-Pack)', u'url': u'http://www.bestbuy.com/site/duracell-aa-1-5v-coppertop-batteries-4-pack/48...
+20190221 23:59:21.241 - INFO - +--- END KW: RestApiTest.Test Api Endpoint (134)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+20190221 23:59:21.241 - INFO - +--- START KW: BuiltIn.Run Keyword And Continue On Failure [ should be True | ${result} ]
+20190221 23:59:21.241 - INFO - +---- START KW: BuiltIn.Should Be True [ ${result} ]
+20190221 23:59:21.241 - INFO - +---- END KW: BuiltIn.Should Be True (0)
+20190221 23:59:21.242 - INFO - +--- END KW: BuiltIn.Run Keyword And Continue On Failure (1)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+20190221 23:59:21.242 - INFO - +--- START KW: BuiltIn.Set Test Variable [ ${response_data} | ${response["data"]} ]
+20190221 23:59:21.243 - INFO - ${response_data} = [{u'name': u'Duracell - AA 1.5V CopperTop Batteries (4-Pack)', u'url': u'http://www.bestbuy.com/site/duracell-aa-1-5v-coppertop-batteries-4-pack/48530.p?id=1099385268988&skuId=48530&cmp=RMXCC', u'pric...
+20190221 23:59:21.243 - INFO - +--- END KW: BuiltIn.Set Test Variable (1)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+20190221 23:59:21.243 - INFO - +--- START KW: ${item} IN [ @{response_data} ] [ ]
+20190221 23:59:21.243 - INFO - +---- START KW: ${item} = {u'name': u'Duracell - AA 1.5V CopperTop Batteries (4-Pack)', u'url': u'http://www.bestbuy.com/site/duracell-aa-1-5v-coppertop-batteries-4-pack/48530.p?id=1099385268988&skuId=48530&cmp=RMXCC', u'price... [ ]
+20190221 23:59:21.243 - INFO - +----- START KW: RestApiTest.Validate Response With Schema [ products | ${item} ]
+20190221 23:59:21.244 - INFO - {u'title': u'The Root Schema', u'$id': u'http://example.com/root.json', u'required': [u'name', u'price', u'shipping', u'upc', u'description', u'manufacturer', u'model', u'url', u'image'], u'definitions': {}, u'$schema': u'http://json-schema.org/draft-06/schema#', u'type': u'object', u'properties': {u'description': {u'title': u'The Description Schema', u'$id': u'#/properties/description', u'pattern': u'^(.*)$', u'default': u'', u'examples': [u'string'], u'type': u'string'}, u'url': {u'title': u'The Url Schema', u'$id': u'#/properties/url', u'pattern': u'^(.*)$', u'default': u'', u'examples': [u'string'], u'type': u'string'}, u'price': {u'$id': u'#/properties/price', u'default': 0.0, u'type': u'number', u'examples': [5.49], u'title': u'The Price Schema'}, u'upc': {u'title': u'The Upc Schema', u'$id': u'#/properties/upc', u'pattern': u'^(.*)$', u'default': u'', u'examples': [u'string'], u'type': u'string'}, u'shipping': {u'$id': u'#/properties/shipping', u'default': 0.0, u'type': u'number', u'examples': [5.49], u'title': u'The Shipping Schema'}, u'name': {u'title': u'The Name Schema', u'$id': u'#/properties/name', u'pattern': u'^(.*)$', u'default': u'', u'examples': [u'string'], u'type': u'string'}, u'model': {u'title': u'The Model Schema', u'$id': u'#/properties/model', u'pattern': u'^(.*)$', u'default': u'', u'examples': [u'string'], u'type': u'string'}, u'image': {u'title': u'The Image Schema', u'$id': u'#/properties/image', u'pattern': u'^(.*)$', u'default': u'', u'examples': [u'string'], u'type': u'string'}, u'manufacturer': {u'title': u'The Manufacturer Schema', u'$id': u'#/properties/manufacturer', u'pattern': u'^(.*)$', u'default': u'', u'examples': [u'string'], u'type': u'string'}}}
+20190221 23:59:21.244 - INFO - +----- END KW: RestApiTest.Validate Response With Schema (1)
+20190221 23:59:21.245 - INFO - +---- END KW: ${item} = {u'name': u'Duracell - AA 1.5V CopperTop Batteries (4-Pack)', u'url': u'http://www.bestbuy.com/site/duracell-aa-1-5v-coppertop-batteries-4-pack/48530.p?id=1099385268988&skuId=48530&cmp=RMXCC', u'price... (2)
+20190221 23:59:21.245 - INFO - +---- START KW: ${item} = {u'name': u'Duracell - AA Batteries (8-Pack)', u'url': u'http://www.bestbuy.com/site/duracell-aa-batteries-8-pack/127687.p?id=1051384045676&skuId=127687&cmp=RMXCC', u'price': 7.49, u'upc': u'041333825... [ ]
+20190221 23:59:21.245 - INFO - +----- START KW: RestApiTest.Validate Response With Schema [ products | ${item} ]
+20190221 23:59:21.246 - INFO - {u'title': u'The Root Schema', u'$id': u'http://example.com/root.json', u'required': [u'name', u'price', u'shipping', u'upc', u'description', u'manufacturer', u'model', u'url', u'image'], u'definitions': {}, u'$schema': u'http://json-schema.org/draft-06/schema#', u'type': u'object', u'properties': {u'description': {u'title': u'The Description Schema', u'$id': u'#/properties/description', u'pattern': u'^(.*)$', u'default': u'', u'examples': [u'string'], u'type': u'string'}, u'url': {u'title': u'The Url Schema', u'$id': u'#/properties/url', u'pattern': u'^(.*)$', u'default': u'', u'examples': [u'string'], u'type': u'string'}, u'price': {u'$id': u'#/properties/price', u'default': 0.0, u'type': u'number', u'examples': [5.49], u'title': u'The Price Schema'}, u'upc': {u'title': u'The Upc Schema', u'$id': u'#/properties/upc', u'pattern': u'^(.*)$', u'default': u'', u'examples': [u'string'], u'type': u'string'}, u'shipping': {u'$id': u'#/properties/shipping', u'default': 0.0, u'type': u'number', u'examples': [5.49], u'title': u'The Shipping Schema'}, u'name': {u'title': u'The Name Schema', u'$id': u'#/properties/name', u'pattern': u'^(.*)$', u'default': u'', u'examples': [u'string'], u'type': u'string'}, u'model': {u'title': u'The Model Schema', u'$id': u'#/properties/model', u'pattern': u'^(.*)$', u'default': u'', u'examples': [u'string'], u'type': u'string'}, u'image': {u'title': u'The Image Schema', u'$id': u'#/properties/image', u'pattern': u'^(.*)$', u'default': u'', u'examples': [u'string'], u'type': u'string'}, u'manufacturer': {u'title': u'The Manufacturer Schema', u'$id': u'#/properties/manufacturer', u'pattern': u'^(.*)$', u'default': u'', u'examples': [u'string'], u'type': u'string'}}}
+20190221 23:59:21.246 - INFO - +----- END KW: RestApiTest.Validate Response With Schema (1)
+20190221 23:59:21.246 - INFO - +---- END KW: ${item} = {u'name': u'Duracell - AA Batteries (8-Pack)', u'url': u'http://www.bestbuy.com/site/duracell-aa-batteries-8-pack/127687.p?id=1051384045676&skuId=127687&cmp=RMXCC', u'price': 7.49, u'upc': u'041333825... (1)
+20190221 23:59:21.246 - INFO - +---- START KW: ${item} = {u'name': u'Energizer - MAX Batteries AA (4-Pack)', u'url': u'http://www.bestbuy.com/site/energizer-max-batteries-aa-4-pack/150115.p?id=1051384046217&skuId=150115&cmp=RMXCC', u'price': 4.99, u'upc': u... [ ]
+20190221 23:59:21.246 - INFO - +----- START KW: RestApiTest.Validate Response With Schema [ products | ${item} ]
+20190221 23:59:21.248 - INFO - {u'title': u'The Root Schema', u'$id': u'http://example.com/root.json', u'required': [u'name', u'price', u'shipping', u'upc', u'description', u'manufacturer', u'model', u'url', u'image'], u'definitions': {}, u'$schema': u'http://json-schema.org/draft-06/schema#', u'type': u'object', u'properties': {u'description': {u'title': u'The Description Schema', u'$id': u'#/properties/description', u'pattern': u'^(.*)$', u'default': u'', u'examples': [u'string'], u'type': u'string'}, u'url': {u'title': u'The Url Schema', u'$id': u'#/properties/url', u'pattern': u'^(.*)$', u'default': u'', u'examples': [u'string'], u'type': u'string'}, u'price': {u'$id': u'#/properties/price', u'default': 0.0, u'type': u'number', u'examples': [5.49], u'title': u'The Price Schema'}, u'upc': {u'title': u'The Upc Schema', u'$id': u'#/properties/upc', u'pattern': u'^(.*)$', u'default': u'', u'examples': [u'string'], u'type': u'string'}, u'shipping': {u'$id': u'#/properties/shipping', u'default': 0.0, u'type': u'number', u'examples': [5.49], u'title': u'The Shipping Schema'}, u'name': {u'title': u'The Name Schema', u'$id': u'#/properties/name', u'pattern': u'^(.*)$', u'default': u'', u'examples': [u'string'], u'type': u'string'}, u'model': {u'title': u'The Model Schema', u'$id': u'#/properties/model', u'pattern': u'^(.*)$', u'default': u'', u'examples': [u'string'], u'type': u'string'}, u'image': {u'title': u'The Image Schema', u'$id': u'#/properties/image', u'pattern': u'^(.*)$', u'default': u'', u'examples': [u'string'], u'type': u'string'}, u'manufacturer': {u'title': u'The Manufacturer Schema', u'$id': u'#/properties/manufacturer', u'pattern': u'^(.*)$', u'default': u'', u'examples': [u'string'], u'type': u'string'}}}
+20190221 23:59:21.248 - INFO - +----- END KW: RestApiTest.Validate Response With Schema (2)
+20190221 23:59:21.248 - INFO - +---- END KW: ${item} = {u'name': u'Energizer - MAX Batteries AA (4-Pack)', u'url': u'http://www.bestbuy.com/site/energizer-max-batteries-aa-4-pack/150115.p?id=1051384046217&skuId=150115&cmp=RMXCC', u'price': 4.99, u'upc': u... (2)
+20190221 23:59:21.248 - INFO - +---- START KW: ${item} = {u'name': u'Duracell - C Batteries (4-Pack)', u'url': u'http://www.bestbuy.com/site/duracell-c-batteries-4-pack/185230.p?id=1051384046486&skuId=185230&cmp=RMXCC', u'price': 8.99, u'upc': u'04133344001... [ ]
+20190221 23:59:21.248 - INFO - +----- START KW: RestApiTest.Validate Response With Schema [ products | ${item} ]
+20190221 23:59:21.249 - INFO - {u'title': u'The Root Schema', u'$id': u'http://example.com/root.json', u'required': [u'name', u'price', u'shipping', u'upc', u'description', u'manufacturer', u'model', u'url', u'image'], u'definitions': {}, u'$schema': u'http://json-schema.org/draft-06/schema#', u'type': u'object', u'properties': {u'description': {u'title': u'The Description Schema', u'$id': u'#/properties/description', u'pattern': u'^(.*)$', u'default': u'', u'examples': [u'string'], u'type': u'string'}, u'url': {u'title': u'The Url Schema', u'$id': u'#/properties/url', u'pattern': u'^(.*)$', u'default': u'', u'examples': [u'string'], u'type': u'string'}, u'price': {u'$id': u'#/properties/price', u'default': 0.0, u'type': u'number', u'examples': [5.49], u'title': u'The Price Schema'}, u'upc': {u'title': u'The Upc Schema', u'$id': u'#/properties/upc', u'pattern': u'^(.*)$', u'default': u'', u'examples': [u'string'], u'type': u'string'}, u'shipping': {u'$id': u'#/properties/shipping', u'default': 0.0, u'type': u'number', u'examples': [5.49], u'title': u'The Shipping Schema'}, u'name': {u'title': u'The Name Schema', u'$id': u'#/properties/name', u'pattern': u'^(.*)$', u'default': u'', u'examples': [u'string'], u'type': u'string'}, u'model': {u'title': u'The Model Schema', u'$id': u'#/properties/model', u'pattern': u'^(.*)$', u'default': u'', u'examples': [u'string'], u'type': u'string'}, u'image': {u'title': u'The Image Schema', u'$id': u'#/properties/image', u'pattern': u'^(.*)$', u'default': u'', u'examples': [u'string'], u'type': u'string'}, u'manufacturer': {u'title': u'The Manufacturer Schema', u'$id': u'#/properties/manufacturer', u'pattern': u'^(.*)$', u'default': u'', u'examples': [u'string'], u'type': u'string'}}}
+20190221 23:59:21.249 - INFO - +----- END KW: RestApiTest.Validate Response With Schema (1)
+20190221 23:59:21.249 - INFO - +---- END KW: ${item} = {u'name': u'Duracell - C Batteries (4-Pack)', u'url': u'http://www.bestbuy.com/site/duracell-c-batteries-4-pack/185230.p?id=1051384046486&skuId=185230&cmp=RMXCC', u'price': 8.99, u'upc': u'04133344001... (1)
+20190221 23:59:21.249 - INFO - +---- START KW: ${item} = {u'name': u'Duracell - D Batteries (4-Pack)', u'url': u'http://www.bestbuy.com/site/duracell-d-batteries-4-pack/185267.p?id=1051384046551&skuId=185267&cmp=RMXCC', u'price': 9.99, u'upc': u'04133343001... [ ]
+20190221 23:59:21.250 - INFO - +----- START KW: RestApiTest.Validate Response With Schema [ products | ${item} ]
+20190221 23:59:21.251 - INFO - {u'title': u'The Root Schema', u'$id': u'http://example.com/root.json', u'required': [u'name', u'price', u'shipping', u'upc', u'description', u'manufacturer', u'model', u'url', u'image'], u'definitions': {}, u'$schema': u'http://json-schema.org/draft-06/schema#', u'type': u'object', u'properties': {u'description': {u'title': u'The Description Schema', u'$id': u'#/properties/description', u'pattern': u'^(.*)$', u'default': u'', u'examples': [u'string'], u'type': u'string'}, u'url': {u'title': u'The Url Schema', u'$id': u'#/properties/url', u'pattern': u'^(.*)$', u'default': u'', u'examples': [u'string'], u'type': u'string'}, u'price': {u'$id': u'#/properties/price', u'default': 0.0, u'type': u'number', u'examples': [5.49], u'title': u'The Price Schema'}, u'upc': {u'title': u'The Upc Schema', u'$id': u'#/properties/upc', u'pattern': u'^(.*)$', u'default': u'', u'examples': [u'string'], u'type': u'string'}, u'shipping': {u'$id': u'#/properties/shipping', u'default': 0.0, u'type': u'number', u'examples': [5.49], u'title': u'The Shipping Schema'}, u'name': {u'title': u'The Name Schema', u'$id': u'#/properties/name', u'pattern': u'^(.*)$', u'default': u'', u'examples': [u'string'], u'type': u'string'}, u'model': {u'title': u'The Model Schema', u'$id': u'#/properties/model', u'pattern': u'^(.*)$', u'default': u'', u'examples': [u'string'], u'type': u'string'}, u'image': {u'title': u'The Image Schema', u'$id': u'#/properties/image', u'pattern': u'^(.*)$', u'default': u'', u'examples': [u'string'], u'type': u'string'}, u'manufacturer': {u'title': u'The Manufacturer Schema', u'$id': u'#/properties/manufacturer', u'pattern': u'^(.*)$', u'default': u'', u'examples': [u'string'], u'type': u'string'}}}
+20190221 23:59:21.251 - INFO - +----- END KW: RestApiTest.Validate Response With Schema (1)
+20190221 23:59:21.251 - INFO - +---- END KW: ${item} = {u'name': u'Duracell - D Batteries (4-Pack)', u'url': u'http://www.bestbuy.com/site/duracell-d-batteries-4-pack/185267.p?id=1051384046551&skuId=185267&cmp=RMXCC', u'price': 9.99, u'upc': u'04133343001... (2)
+20190221 23:59:21.251 - INFO - +---- START KW: ${item} = {u'name': u'Pioneer - 4" 3-Way Surface-Mount Speakers with IMPP Composite Cones (Pair) - Black', u'url': u'http://www.bestbuy.com/site/pioneer-4-3-way-surface-mount-speakers-with-impp-composite-cones-... [ ]
+20190221 23:59:21.251 - INFO - +----- START KW: RestApiTest.Validate Response With Schema [ products | ${item} ]
+20190221 23:59:21.252 - INFO - {u'title': u'The Root Schema', u'$id': u'http://example.com/root.json', u'required': [u'name', u'price', u'shipping', u'upc', u'description', u'manufacturer', u'model', u'url', u'image'], u'definitions': {}, u'$schema': u'http://json-schema.org/draft-06/schema#', u'type': u'object', u'properties': {u'description': {u'title': u'The Description Schema', u'$id': u'#/properties/description', u'pattern': u'^(.*)$', u'default': u'', u'examples': [u'string'], u'type': u'string'}, u'url': {u'title': u'The Url Schema', u'$id': u'#/properties/url', u'pattern': u'^(.*)$', u'default': u'', u'examples': [u'string'], u'type': u'string'}, u'price': {u'$id': u'#/properties/price', u'default': 0.0, u'type': u'number', u'examples': [5.49], u'title': u'The Price Schema'}, u'upc': {u'title': u'The Upc Schema', u'$id': u'#/properties/upc', u'pattern': u'^(.*)$', u'default': u'', u'examples': [u'string'], u'type': u'string'}, u'shipping': {u'$id': u'#/properties/shipping', u'default': 0.0, u'type': u'number', u'examples': [5.49], u'title': u'The Shipping Schema'}, u'name': {u'title': u'The Name Schema', u'$id': u'#/properties/name', u'pattern': u'^(.*)$', u'default': u'', u'examples': [u'string'], u'type': u'string'}, u'model': {u'title': u'The Model Schema', u'$id': u'#/properties/model', u'pattern': u'^(.*)$', u'default': u'', u'examples': [u'string'], u'type': u'string'}, u'image': {u'title': u'The Image Schema', u'$id': u'#/properties/image', u'pattern': u'^(.*)$', u'default': u'', u'examples': [u'string'], u'type': u'string'}, u'manufacturer': {u'title': u'The Manufacturer Schema', u'$id': u'#/properties/manufacturer', u'pattern': u'^(.*)$', u'default': u'', u'examples': [u'string'], u'type': u'string'}}}
+20190221 23:59:21.253 - INFO - +----- END KW: RestApiTest.Validate Response With Schema (1)
+20190221 23:59:21.253 - INFO - +---- END KW: ${item} = {u'name': u'Pioneer - 4" 3-Way Surface-Mount Speakers with IMPP Composite Cones (Pair) - Black', u'url': u'http://www.bestbuy.com/site/pioneer-4-3-way-surface-mount-speakers-with-impp-composite-cones-... (2)
+20190221 23:59:21.253 - INFO - +---- START KW: ${item} = {u'name': u'Duracell - 9V Batteries (2-Pack)', u'url': u'http://www.bestbuy.com/site/duracell-9v-batteries-2-pack/312290.p?id=1051384050321&skuId=312290&cmp=RMXCC', u'price': 7.99, u'upc': u'041333216... [ ]
+20190221 23:59:21.253 - INFO - +----- START KW: RestApiTest.Validate Response With Schema [ products | ${item} ]
+20190221 23:59:21.254 - INFO - {u'title': u'The Root Schema', u'$id': u'http://example.com/root.json', u'required': [u'name', u'price', u'shipping', u'upc', u'description', u'manufacturer', u'model', u'url', u'image'], u'definitions': {}, u'$schema': u'http://json-schema.org/draft-06/schema#', u'type': u'object', u'properties': {u'description': {u'title': u'The Description Schema', u'$id': u'#/properties/description', u'pattern': u'^(.*)$', u'default': u'', u'examples': [u'string'], u'type': u'string'}, u'url': {u'title': u'The Url Schema', u'$id': u'#/properties/url', u'pattern': u'^(.*)$', u'default': u'', u'examples': [u'string'], u'type': u'string'}, u'price': {u'$id': u'#/properties/price', u'default': 0.0, u'type': u'number', u'examples': [5.49], u'title': u'The Price Schema'}, u'upc': {u'title': u'The Upc Schema', u'$id': u'#/properties/upc', u'pattern': u'^(.*)$', u'default': u'', u'examples': [u'string'], u'type': u'string'}, u'shipping': {u'$id': u'#/properties/shipping', u'default': 0.0, u'type': u'number', u'examples': [5.49], u'title': u'The Shipping Schema'}, u'name': {u'title': u'The Name Schema', u'$id': u'#/properties/name', u'pattern': u'^(.*)$', u'default': u'', u'examples': [u'string'], u'type': u'string'}, u'model': {u'title': u'The Model Schema', u'$id': u'#/properties/model', u'pattern': u'^(.*)$', u'default': u'', u'examples': [u'string'], u'type': u'string'}, u'image': {u'title': u'The Image Schema', u'$id': u'#/properties/image', u'pattern': u'^(.*)$', u'default': u'', u'examples': [u'string'], u'type': u'string'}, u'manufacturer': {u'title': u'The Manufacturer Schema', u'$id': u'#/properties/manufacturer', u'pattern': u'^(.*)$', u'default': u'', u'examples': [u'string'], u'type': u'string'}}}
+20190221 23:59:21.254 - INFO - +----- END KW: RestApiTest.Validate Response With Schema (1)
+20190221 23:59:21.255 - INFO - +---- END KW: ${item} = {u'name': u'Duracell - 9V Batteries (2-Pack)', u'url': u'http://www.bestbuy.com/site/duracell-9v-batteries-2-pack/312290.p?id=1051384050321&skuId=312290&cmp=RMXCC', u'price': 7.99, u'upc': u'041333216... (1)
+20190221 23:59:21.255 - INFO - +---- START KW: ${item} = {u'name': u'Energizer - N Cell E90 Batteries (2-Pack)', u'url': u'http://www.bestbuy.com/site/energizer-n-cell-e90-batteries-2-pack/333179.p?id=1185268509951&skuId=333179&cmp=RMXCC', u'price': 5.99, u... [ ]
+20190221 23:59:21.255 - INFO - +----- START KW: RestApiTest.Validate Response With Schema [ products | ${item} ]
+20190221 23:59:21.256 - INFO - {u'title': u'The Root Schema', u'$id': u'http://example.com/root.json', u'required': [u'name', u'price', u'shipping', u'upc', u'description', u'manufacturer', u'model', u'url', u'image'], u'definitions': {}, u'$schema': u'http://json-schema.org/draft-06/schema#', u'type': u'object', u'properties': {u'description': {u'title': u'The Description Schema', u'$id': u'#/properties/description', u'pattern': u'^(.*)$', u'default': u'', u'examples': [u'string'], u'type': u'string'}, u'url': {u'title': u'The Url Schema', u'$id': u'#/properties/url', u'pattern': u'^(.*)$', u'default': u'', u'examples': [u'string'], u'type': u'string'}, u'price': {u'$id': u'#/properties/price', u'default': 0.0, u'type': u'number', u'examples': [5.49], u'title': u'The Price Schema'}, u'upc': {u'title': u'The Upc Schema', u'$id': u'#/properties/upc', u'pattern': u'^(.*)$', u'default': u'', u'examples': [u'string'], u'type': u'string'}, u'shipping': {u'$id': u'#/properties/shipping', u'default': 0.0, u'type': u'number', u'examples': [5.49], u'title': u'The Shipping Schema'}, u'name': {u'title': u'The Name Schema', u'$id': u'#/properties/name', u'pattern': u'^(.*)$', u'default': u'', u'examples': [u'string'], u'type': u'string'}, u'model': {u'title': u'The Model Schema', u'$id': u'#/properties/model', u'pattern': u'^(.*)$', u'default': u'', u'examples': [u'string'], u'type': u'string'}, u'image': {u'title': u'The Image Schema', u'$id': u'#/properties/image', u'pattern': u'^(.*)$', u'default': u'', u'examples': [u'string'], u'type': u'string'}, u'manufacturer': {u'title': u'The Manufacturer Schema', u'$id': u'#/properties/manufacturer', u'pattern': u'^(.*)$', u'default': u'', u'examples': [u'string'], u'type': u'string'}}}
+20190221 23:59:21.257 - INFO - +----- END KW: RestApiTest.Validate Response With Schema (1)
+20190221 23:59:21.257 - INFO - +---- END KW: ${item} = {u'name': u'Energizer - N Cell E90 Batteries (2-Pack)', u'url': u'http://www.bestbuy.com/site/energizer-n-cell-e90-batteries-2-pack/333179.p?id=1185268509951&skuId=333179&cmp=RMXCC', u'price': 5.99, u... (2)
+20190221 23:59:21.257 - INFO - +---- START KW: ${item} = {u'name': u'Metra - Radio Installation Dash Kit for Most 1989-2000 Ford, Lincoln & Mercury Vehicles - Black', u'url': u'http://www.bestbuy.com/site/metra-radio-installation-dash-kit-for-most-1989-2000... [ ]
+20190221 23:59:21.257 - INFO - +----- START KW: RestApiTest.Validate Response With Schema [ products | ${item} ]
+20190221 23:59:21.259 - INFO - {u'title': u'The Root Schema', u'$id': u'http://example.com/root.json', u'required': [u'name', u'price', u'shipping', u'upc', u'description', u'manufacturer', u'model', u'url', u'image'], u'definitions': {}, u'$schema': u'http://json-schema.org/draft-06/schema#', u'type': u'object', u'properties': {u'description': {u'title': u'The Description Schema', u'$id': u'#/properties/description', u'pattern': u'^(.*)$', u'default': u'', u'examples': [u'string'], u'type': u'string'}, u'url': {u'title': u'The Url Schema', u'$id': u'#/properties/url', u'pattern': u'^(.*)$', u'default': u'', u'examples': [u'string'], u'type': u'string'}, u'price': {u'$id': u'#/properties/price', u'default': 0.0, u'type': u'number', u'examples': [5.49], u'title': u'The Price Schema'}, u'upc': {u'title': u'The Upc Schema', u'$id': u'#/properties/upc', u'pattern': u'^(.*)$', u'default': u'', u'examples': [u'string'], u'type': u'string'}, u'shipping': {u'$id': u'#/properties/shipping', u'default': 0.0, u'type': u'number', u'examples': [5.49], u'title': u'The Shipping Schema'}, u'name': {u'title': u'The Name Schema', u'$id': u'#/properties/name', u'pattern': u'^(.*)$', u'default': u'', u'examples': [u'string'], u'type': u'string'}, u'model': {u'title': u'The Model Schema', u'$id': u'#/properties/model', u'pattern': u'^(.*)$', u'default': u'', u'examples': [u'string'], u'type': u'string'}, u'image': {u'title': u'The Image Schema', u'$id': u'#/properties/image', u'pattern': u'^(.*)$', u'default': u'', u'examples': [u'string'], u'type': u'string'}, u'manufacturer': {u'title': u'The Manufacturer Schema', u'$id': u'#/properties/manufacturer', u'pattern': u'^(.*)$', u'default': u'', u'examples': [u'string'], u'type': u'string'}}}
+20190221 23:59:21.259 - INFO - +----- END KW: RestApiTest.Validate Response With Schema (2)
+20190221 23:59:21.260 - INFO - +---- END KW: ${item} = {u'name': u'Metra - Radio Installation Dash Kit for Most 1989-2000 Ford, Lincoln & Mercury Vehicles - Black', u'url': u'http://www.bestbuy.com/site/metra-radio-installation-dash-kit-for-most-1989-2000... (2)
+20190221 23:59:21.260 - INFO - +---- START KW: ${item} = {u'name': u'Metra - Radio Dash Multikit for Select GM Vehicles - Black', u'url': u'http://www.bestbuy.com/site/metra-radio-dash-multikit-for-select-gm-vehicles-black/346646.p?id=1210376657731&skuId=34... [ ]
+20190221 23:59:21.260 - INFO - +----- START KW: RestApiTest.Validate Response With Schema [ products | ${item} ]
+20190221 23:59:21.261 - INFO - {u'title': u'The Root Schema', u'$id': u'http://example.com/root.json', u'required': [u'name', u'price', u'shipping', u'upc', u'description', u'manufacturer', u'model', u'url', u'image'], u'definitions': {}, u'$schema': u'http://json-schema.org/draft-06/schema#', u'type': u'object', u'properties': {u'description': {u'title': u'The Description Schema', u'$id': u'#/properties/description', u'pattern': u'^(.*)$', u'default': u'', u'examples': [u'string'], u'type': u'string'}, u'url': {u'title': u'The Url Schema', u'$id': u'#/properties/url', u'pattern': u'^(.*)$', u'default': u'', u'examples': [u'string'], u'type': u'string'}, u'price': {u'$id': u'#/properties/price', u'default': 0.0, u'type': u'number', u'examples': [5.49], u'title': u'The Price Schema'}, u'upc': {u'title': u'The Upc Schema', u'$id': u'#/properties/upc', u'pattern': u'^(.*)$', u'default': u'', u'examples': [u'string'], u'type': u'string'}, u'shipping': {u'$id': u'#/properties/shipping', u'default': 0.0, u'type': u'number', u'examples': [5.49], u'title': u'The Shipping Schema'}, u'name': {u'title': u'The Name Schema', u'$id': u'#/properties/name', u'pattern': u'^(.*)$', u'default': u'', u'examples': [u'string'], u'type': u'string'}, u'model': {u'title': u'The Model Schema', u'$id': u'#/properties/model', u'pattern': u'^(.*)$', u'default': u'', u'examples': [u'string'], u'type': u'string'}, u'image': {u'title': u'The Image Schema', u'$id': u'#/properties/image', u'pattern': u'^(.*)$', u'default': u'', u'examples': [u'string'], u'type': u'string'}, u'manufacturer': {u'title': u'The Manufacturer Schema', u'$id': u'#/properties/manufacturer', u'pattern': u'^(.*)$', u'default': u'', u'examples': [u'string'], u'type': u'string'}}}
+20190221 23:59:21.261 - INFO - +----- END KW: RestApiTest.Validate Response With Schema (1)
+20190221 23:59:21.261 - INFO - +---- END KW: ${item} = {u'name': u'Metra - Radio Dash Multikit for Select GM Vehicles - Black', u'url': u'http://www.bestbuy.com/site/metra-radio-dash-multikit-for-select-gm-vehicles-black/346646.p?id=1210376657731&skuId=34... (1)
+20190221 23:59:21.261 - INFO - +--- END KW: ${item} IN [ @{response_data} ] (18)
+------------------------------------------------------------------------------
+20190221 23:59:21.262 - INFO - +-- END TEST: Fetch All records - GET | Validate JSON Schema of the Response (156)
+------------------------------------------------------------------------------
+20190221 23:59:21.262 - INFO - +-- START TEST: Create , Fetch, Update and Delete New record - POST, GET, PATCH, DELETE | Validate JSON Schema of each of the Responses [ ]
+------------------------------------------------------------------------------
+20190221 23:59:21.262 - INFO - +--- START KW: BuiltIn.Set Test Variable [ ${product} | {"name": "Test Create product", "type": "Hardware", "price": 200, "shipping": 0,"upc": "string","description": "test Product being added","manufacturer": "Test manufacturer","model": "test model","url": "test url","image": "test image"} ]
+20190221 23:59:21.263 - INFO - ${product} = {"name": "Test Create product", "type": "Hardware", "price": 200, "shipping": 0,"upc": "string","description": "test Product being added","manufacturer": "Test manufacturer","model": "test model","url...
+20190221 23:59:21.263 - INFO - +--- END KW: BuiltIn.Set Test Variable (1)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+20190221 23:59:21.263 - INFO - +--- START KW: RestApiTest.Test Api Endpoint [ products | POST | {} | ${product} ]
+20190221 23:59:21.264 - DEBUG - POST http://localhost:3030/products
+20190221 23:59:21.274 - INFO - ${result} = True
+20190221 23:59:21.275 - INFO - ${created_product_response} = {u'description': u'test Product being added', u'url': u'test url', u'price': 200, u'upc': u'string', u'shipping': 0, u'name': u'Test Create product', u'image': u'test image', u'updatedAt': u'2019-02-2...
+20190221 23:59:21.275 - INFO - +--- END KW: RestApiTest.Test Api Endpoint (12)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+20190221 23:59:21.275 - INFO - +--- START KW: BuiltIn.Set Test Variable [ ${id} | ${created_product_response["id"]} ]
+20190221 23:59:21.276 - INFO - ${id} = 9999737
+20190221 23:59:21.276 - INFO - +--- END KW: BuiltIn.Set Test Variable (1)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+20190221 23:59:21.276 - INFO - +--- START KW: BuiltIn.Run Keyword And Continue On Failure [ should be True | ${result} ]
+20190221 23:59:21.276 - INFO - +---- START KW: BuiltIn.Should Be True [ ${result} ]
+20190221 23:59:21.276 - INFO - +---- END KW: BuiltIn.Should Be True (0)
+20190221 23:59:21.276 - INFO - +--- END KW: BuiltIn.Run Keyword And Continue On Failure (0)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+20190221 23:59:21.277 - INFO - +--- START KW: RestApiTest.Validate Response With Schema [ products | ${created_product_response} ]
+20190221 23:59:21.279 - INFO - {u'title': u'The Root Schema', u'$id': u'http://example.com/root.json', u'required': [u'name', u'price', u'shipping', u'upc', u'description', u'manufacturer', u'model', u'url', u'image'], u'definitions': {}, u'$schema': u'http://json-schema.org/draft-06/schema#', u'type': u'object', u'properties': {u'description': {u'title': u'The Description Schema', u'$id': u'#/properties/description', u'pattern': u'^(.*)$', u'default': u'', u'examples': [u'string'], u'type': u'string'}, u'url': {u'title': u'The Url Schema', u'$id': u'#/properties/url', u'pattern': u'^(.*)$', u'default': u'', u'examples': [u'string'], u'type': u'string'}, u'price': {u'$id': u'#/properties/price', u'default': 0.0, u'type': u'number', u'examples': [5.49], u'title': u'The Price Schema'}, u'upc': {u'title': u'The Upc Schema', u'$id': u'#/properties/upc', u'pattern': u'^(.*)$', u'default': u'', u'examples': [u'string'], u'type': u'string'}, u'shipping': {u'$id': u'#/properties/shipping', u'default': 0.0, u'type': u'number', u'examples': [5.49], u'title': u'The Shipping Schema'}, u'name': {u'title': u'The Name Schema', u'$id': u'#/properties/name', u'pattern': u'^(.*)$', u'default': u'', u'examples': [u'string'], u'type': u'string'}, u'model': {u'title': u'The Model Schema', u'$id': u'#/properties/model', u'pattern': u'^(.*)$', u'default': u'', u'examples': [u'string'], u'type': u'string'}, u'image': {u'title': u'The Image Schema', u'$id': u'#/properties/image', u'pattern': u'^(.*)$', u'default': u'', u'examples': [u'string'], u'type': u'string'}, u'manufacturer': {u'title': u'The Manufacturer Schema', u'$id': u'#/properties/manufacturer', u'pattern': u'^(.*)$', u'default': u'', u'examples': [u'string'], u'type': u'string'}}}
+20190221 23:59:21.279 - INFO - +--- END KW: RestApiTest.Validate Response With Schema (2)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+20190221 23:59:21.280 - INFO - +--- START KW: RestApiTest.Test Api Endpoint [ products/${id} | GET ]
+20190221 23:59:21.280 - DEBUG - GET http://localhost:3030/products/9999737
+20190221 23:59:21.286 - INFO - ${result} = True
+20190221 23:59:21.286 - INFO - ${response} = {u'name': u'Test Create product', u'url': u'test url', u'price': 200, u'upc': u'string', u'shipping': 0, u'categories': [], u'image': u'test image', u'updatedAt': u'2019-02-21T18:29:21.270Z', u'model'...
+20190221 23:59:21.286 - INFO - +--- END KW: RestApiTest.Test Api Endpoint (6)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+20190221 23:59:21.286 - INFO - +--- START KW: BuiltIn.Run Keyword And Continue On Failure [ should be True | ${result} ]
+20190221 23:59:21.287 - INFO - +---- START KW: BuiltIn.Should Be True [ ${result} ]
+20190221 23:59:21.287 - INFO - +---- END KW: BuiltIn.Should Be True (0)
+20190221 23:59:21.287 - INFO - +--- END KW: BuiltIn.Run Keyword And Continue On Failure (1)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+20190221 23:59:21.287 - INFO - +--- START KW: RestApiTest.Validate Response With Schema [ products | ${response} ]
+20190221 23:59:21.288 - INFO - {u'title': u'The Root Schema', u'$id': u'http://example.com/root.json', u'required': [u'name', u'price', u'shipping', u'upc', u'description', u'manufacturer', u'model', u'url', u'image'], u'definitions': {}, u'$schema': u'http://json-schema.org/draft-06/schema#', u'type': u'object', u'properties': {u'description': {u'title': u'The Description Schema', u'$id': u'#/properties/description', u'pattern': u'^(.*)$', u'default': u'', u'examples': [u'string'], u'type': u'string'}, u'url': {u'title': u'The Url Schema', u'$id': u'#/properties/url', u'pattern': u'^(.*)$', u'default': u'', u'examples': [u'string'], u'type': u'string'}, u'price': {u'$id': u'#/properties/price', u'default': 0.0, u'type': u'number', u'examples': [5.49], u'title': u'The Price Schema'}, u'upc': {u'title': u'The Upc Schema', u'$id': u'#/properties/upc', u'pattern': u'^(.*)$', u'default': u'', u'examples': [u'string'], u'type': u'string'}, u'shipping': {u'$id': u'#/properties/shipping', u'default': 0.0, u'type': u'number', u'examples': [5.49], u'title': u'The Shipping Schema'}, u'name': {u'title': u'The Name Schema', u'$id': u'#/properties/name', u'pattern': u'^(.*)$', u'default': u'', u'examples': [u'string'], u'type': u'string'}, u'model': {u'title': u'The Model Schema', u'$id': u'#/properties/model', u'pattern': u'^(.*)$', u'default': u'', u'examples': [u'string'], u'type': u'string'}, u'image': {u'title': u'The Image Schema', u'$id': u'#/properties/image', u'pattern': u'^(.*)$', u'default': u'', u'examples': [u'string'], u'type': u'string'}, u'manufacturer': {u'title': u'The Manufacturer Schema', u'$id': u'#/properties/manufacturer', u'pattern': u'^(.*)$', u'default': u'', u'examples': [u'string'], u'type': u'string'}}}
+20190221 23:59:21.289 - INFO - +--- END KW: RestApiTest.Validate Response With Schema (2)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+20190221 23:59:21.289 - INFO - +--- START KW: BuiltIn.Set Test Variable [ ${updated_product} | {"name": "Test Updated product", "type": "Hardware_Updated", "price": 500, "shipping": 0,"upc": "string","description": "Created product being updated","manufacturer": "Test manufacturer","model": "test model","url": "test url","image": "test image"} ]
+20190221 23:59:21.289 - INFO - ${updated_product} = {"name": "Test Updated product", "type": "Hardware_Updated", "price": 500, "shipping": 0,"upc": "string","description": "Created product being updated","manufacturer": "Test manufacturer","model": "te...
+20190221 23:59:21.290 - INFO - +--- END KW: BuiltIn.Set Test Variable (0)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+20190221 23:59:21.290 - INFO - +--- START KW: RestApiTest.Test Api Endpoint [ products/${id} | PATCH | {} | ${updated_product} ]
+20190221 23:59:21.290 - DEBUG - PATCH http://localhost:3030/products/9999737
+20190221 23:59:21.295 - INFO - ${result} = True
+20190221 23:59:21.295 - INFO - ${response} = {u'name': u'Test Updated product', u'url': u'test url', u'price': 500, u'upc': u'string', u'shipping': 0, u'image': u'test image', u'updatedAt': u'2019-02-21T18:29:21.291Z', u'model': u'test model', u...
+20190221 23:59:21.295 - INFO - +--- END KW: RestApiTest.Test Api Endpoint (5)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+20190221 23:59:21.296 - INFO - +--- START KW: BuiltIn.Run Keyword And Continue On Failure [ should be True | ${result} ]
+20190221 23:59:21.296 - INFO - +---- START KW: BuiltIn.Should Be True [ ${result} ]
+20190221 23:59:21.296 - INFO - +---- END KW: BuiltIn.Should Be True (0)
+20190221 23:59:21.297 - INFO - +--- END KW: BuiltIn.Run Keyword And Continue On Failure (1)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+20190221 23:59:21.297 - INFO - +--- START KW: RestApiTest.Validate Response With Schema [ products | ${response} ]
+20190221 23:59:21.298 - INFO - {u'title': u'The Root Schema', u'$id': u'http://example.com/root.json', u'required': [u'name', u'price', u'shipping', u'upc', u'description', u'manufacturer', u'model', u'url', u'image'], u'definitions': {}, u'$schema': u'http://json-schema.org/draft-06/schema#', u'type': u'object', u'properties': {u'description': {u'title': u'The Description Schema', u'$id': u'#/properties/description', u'pattern': u'^(.*)$', u'default': u'', u'examples': [u'string'], u'type': u'string'}, u'url': {u'title': u'The Url Schema', u'$id': u'#/properties/url', u'pattern': u'^(.*)$', u'default': u'', u'examples': [u'string'], u'type': u'string'}, u'price': {u'$id': u'#/properties/price', u'default': 0.0, u'type': u'number', u'examples': [5.49], u'title': u'The Price Schema'}, u'upc': {u'title': u'The Upc Schema', u'$id': u'#/properties/upc', u'pattern': u'^(.*)$', u'default': u'', u'examples': [u'string'], u'type': u'string'}, u'shipping': {u'$id': u'#/properties/shipping', u'default': 0.0, u'type': u'number', u'examples': [5.49], u'title': u'The Shipping Schema'}, u'name': {u'title': u'The Name Schema', u'$id': u'#/properties/name', u'pattern': u'^(.*)$', u'default': u'', u'examples': [u'string'], u'type': u'string'}, u'model': {u'title': u'The Model Schema', u'$id': u'#/properties/model', u'pattern': u'^(.*)$', u'default': u'', u'examples': [u'string'], u'type': u'string'}, u'image': {u'title': u'The Image Schema', u'$id': u'#/properties/image', u'pattern': u'^(.*)$', u'default': u'', u'examples': [u'string'], u'type': u'string'}, u'manufacturer': {u'title': u'The Manufacturer Schema', u'$id': u'#/properties/manufacturer', u'pattern': u'^(.*)$', u'default': u'', u'examples': [u'string'], u'type': u'string'}}}
+20190221 23:59:21.298 - INFO - +--- END KW: RestApiTest.Validate Response With Schema (1)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+20190221 23:59:21.298 - INFO - +--- START KW: RestApiTest.Test Api Endpoint [ products/${id} | DELETE ]
+20190221 23:59:21.299 - DEBUG - DELETE http://localhost:3030/products/9999737
+20190221 23:59:21.304 - INFO - ${result} = True
+20190221 23:59:21.304 - INFO - ${response} = {u'name': u'Test Updated product', u'url': u'test url', u'price': 500, u'upc': u'string', u'shipping': 0, u'image': u'test image', u'updatedAt': u'2019-02-21T18:29:21.291Z', u'model': u'test model', u...
+20190221 23:59:21.304 - INFO - +--- END KW: RestApiTest.Test Api Endpoint (6)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+20190221 23:59:21.305 - INFO - +--- START KW: BuiltIn.Run Keyword And Continue On Failure [ should be True | ${result} ]
+20190221 23:59:21.305 - INFO - +---- START KW: BuiltIn.Should Be True [ ${result} ]
+20190221 23:59:21.305 - INFO - +---- END KW: BuiltIn.Should Be True (0)
+20190221 23:59:21.305 - INFO - +--- END KW: BuiltIn.Run Keyword And Continue On Failure (0)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+20190221 23:59:21.305 - INFO - +--- START KW: RestApiTest.Test Api Endpoint [ products/${id} | GET ]
+20190221 23:59:21.306 - DEBUG - GET http://localhost:3030/products/9999737
+20190221 23:59:21.309 - INFO - ${result} = True
+20190221 23:59:21.309 - INFO - ${response} = {u'className': u'not-found', u'errors': {}, u'message': u"No record found for id '9999737'", u'code': 404, u'name': u'NotFound'}
+20190221 23:59:21.310 - INFO - +--- END KW: RestApiTest.Test Api Endpoint (5)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+20190221 23:59:21.310 - INFO - +--- START KW: BuiltIn.Run Keyword And Continue On Failure [ should be True | ${result} ]
+20190221 23:59:21.310 - INFO - +---- START KW: BuiltIn.Should Be True [ ${result} ]
+20190221 23:59:21.310 - INFO - +---- END KW: BuiltIn.Should Be True (0)
+20190221 23:59:21.310 - INFO - +--- END KW: BuiltIn.Run Keyword And Continue On Failure (0)
+------------------------------------------------------------------------------
+20190221 23:59:21.311 - INFO - +-- END TEST: Create , Fetch, Update and Delete New record - POST, GET, PATCH, DELETE | Validate JSON Schema of each of the Responses (48)
+------------------------------------------------------------------------------
+20190221 23:59:21.311 - INFO - +- END SUITE: Categories Endpoint TestSuite & Functional Tests & Products Endpoint TestSuite & Services Endpoint TestSuite & Stores Endpoint TestSuite.Products Endpoint TestSuite (209)
+==============================================================================
+20190221 23:59:21.315 - INFO - +- START SUITE: Categories Endpoint TestSuite & Functional Tests & Products Endpoint TestSuite & Services Endpoint TestSuite & Stores Endpoint TestSuite.Services Endpoint TestSuite [ ]
+==============================================================================
+20190221 23:59:21.315 - INFO - +-- START SETUP: Initialize Domain [ ${domain} ]
+20190221 23:59:21.315 - INFO - +--- START KW: RestConnection.Initialize Domain [ ${domain} ]
+20190221 23:59:21.316 - INFO - +--- END KW: RestConnection.Initialize Domain (1)
+20190221 23:59:21.316 - INFO - +-- END SETUP: Initialize Domain (1)
+------------------------------------------------------------------------------
+20190221 23:59:21.316 - INFO - +-- START TEST: Fetch All records - GET | Validate JSON Schema of the Response [ ]
+------------------------------------------------------------------------------
+20190221 23:59:21.317 - INFO - +--- START KW: RestApiTest.Test Api Endpoint [ services | GET ]
+20190221 23:59:21.317 - DEBUG - GET http://localhost:3030/services
+20190221 23:59:21.323 - INFO - ${result} = True
+20190221 23:59:21.323 - INFO - ${response} = {u'skip': 0, u'total': 28, u'limit': 10, u'data': [{u'updatedAt': u'2016-11-17T17:56:35.881Z', u'id': 1, u'createdAt': u'2016-11-17T17:56:35.881Z', u'name': u'Geek Squad Services'}, {u'updatedAt': u'2...
+20190221 23:59:21.323 - INFO - +--- END KW: RestApiTest.Test Api Endpoint (6)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+20190221 23:59:21.324 - INFO - +--- START KW: BuiltIn.Run Keyword And Continue On Failure [ should be True | ${result} ]
+20190221 23:59:21.324 - INFO - +---- START KW: BuiltIn.Should Be True [ ${result} ]
+20190221 23:59:21.324 - INFO - +---- END KW: BuiltIn.Should Be True (0)
+20190221 23:59:21.324 - INFO - +--- END KW: BuiltIn.Run Keyword And Continue On Failure (0)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+20190221 23:59:21.325 - INFO - +--- START KW: BuiltIn.Set Test Variable [ ${response_data} | ${response["data"]} ]
+20190221 23:59:21.326 - INFO - ${response_data} = [{u'updatedAt': u'2016-11-17T17:56:35.881Z', u'id': 1, u'createdAt': u'2016-11-17T17:56:35.881Z', u'name': u'Geek Squad Services'}, {u'updatedAt': u'2016-11-17T17:56:35.881Z', u'id': 2, u'createdAt': ...
+20190221 23:59:21.326 - INFO - +--- END KW: BuiltIn.Set Test Variable (2)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+20190221 23:59:21.326 - INFO - +--- START KW: ${item} IN [ @{response_data} ] [ ]
+20190221 23:59:21.326 - INFO - +---- START KW: ${item} = {u'updatedAt': u'2016-11-17T17:56:35.881Z', u'id': 1, u'createdAt': u'2016-11-17T17:56:35.881Z', u'name': u'Geek Squad Services'} [ ]
+20190221 23:59:21.327 - INFO - +----- START KW: RestApiTest.Validate Response With Schema [ services | ${item} ]
+20190221 23:59:21.327 - INFO - {u'title': u'The Root Schema', u'$id': u'http://example.com/root.json', u'required': [u'name'], u'definitions': {}, u'$schema': u'http://json-schema.org/draft-06/schema#', u'type': u'object', u'properties': {u'name': {u'title': u'The Name Schema', u'$id': u'#/properties/name', u'pattern': u'^(.*)$', u'default': u'', u'examples': [u'string'], u'type': u'string'}}}
+20190221 23:59:21.328 - INFO - +----- END KW: RestApiTest.Validate Response With Schema (0)
+20190221 23:59:21.328 - INFO - +---- END KW: ${item} = {u'updatedAt': u'2016-11-17T17:56:35.881Z', u'id': 1, u'createdAt': u'2016-11-17T17:56:35.881Z', u'name': u'Geek Squad Services'} (2)
+20190221 23:59:21.328 - INFO - +---- START KW: ${item} = {u'updatedAt': u'2016-11-17T17:56:35.881Z', u'id': 2, u'createdAt': u'2016-11-17T17:56:35.881Z', u'name': u'Best Buy Mobile'} [ ]
+20190221 23:59:21.328 - INFO - +----- START KW: RestApiTest.Validate Response With Schema [ services | ${item} ]
+20190221 23:59:21.328 - INFO - {u'title': u'The Root Schema', u'$id': u'http://example.com/root.json', u'required': [u'name'], u'definitions': {}, u'$schema': u'http://json-schema.org/draft-06/schema#', u'type': u'object', u'properties': {u'name': {u'title': u'The Name Schema', u'$id': u'#/properties/name', u'pattern': u'^(.*)$', u'default': u'', u'examples': [u'string'], u'type': u'string'}}}
+20190221 23:59:21.329 - INFO - +----- END KW: RestApiTest.Validate Response With Schema (1)
+20190221 23:59:21.329 - INFO - +---- END KW: ${item} = {u'updatedAt': u'2016-11-17T17:56:35.881Z', u'id': 2, u'createdAt': u'2016-11-17T17:56:35.881Z', u'name': u'Best Buy Mobile'} (1)
+20190221 23:59:21.329 - INFO - +---- START KW: ${item} = {u'updatedAt': u'2016-11-17T17:56:35.881Z', u'id': 3, u'createdAt': u'2016-11-17T17:56:35.881Z', u'name': u'Best Buy For Business'} [ ]
+20190221 23:59:21.329 - INFO - +----- START KW: RestApiTest.Validate Response With Schema [ services | ${item} ]
+20190221 23:59:21.330 - INFO - {u'title': u'The Root Schema', u'$id': u'http://example.com/root.json', u'required': [u'name'], u'definitions': {}, u'$schema': u'http://json-schema.org/draft-06/schema#', u'type': u'object', u'properties': {u'name': {u'title': u'The Name Schema', u'$id': u'#/properties/name', u'pattern': u'^(.*)$', u'default': u'', u'examples': [u'string'], u'type': u'string'}}}
+20190221 23:59:21.330 - INFO - +----- END KW: RestApiTest.Validate Response With Schema (1)
+20190221 23:59:21.330 - INFO - +---- END KW: ${item} = {u'updatedAt': u'2016-11-17T17:56:35.881Z', u'id': 3, u'createdAt': u'2016-11-17T17:56:35.881Z', u'name': u'Best Buy For Business'} (1)
+20190221 23:59:21.330 - INFO - +---- START KW: ${item} = {u'updatedAt': u'2016-11-17T17:56:35.881Z', u'id': 4, u'createdAt': u'2016-11-17T17:56:35.881Z', u'name': u'Apple Shop'} [ ]
+20190221 23:59:21.330 - INFO - +----- START KW: RestApiTest.Validate Response With Schema [ services | ${item} ]
+20190221 23:59:21.331 - INFO - {u'title': u'The Root Schema', u'$id': u'http://example.com/root.json', u'required': [u'name'], u'definitions': {}, u'$schema': u'http://json-schema.org/draft-06/schema#', u'type': u'object', u'properties': {u'name': {u'title': u'The Name Schema', u'$id': u'#/properties/name', u'pattern': u'^(.*)$', u'default': u'', u'examples': [u'string'], u'type': u'string'}}}
+20190221 23:59:21.331 - INFO - +----- END KW: RestApiTest.Validate Response With Schema (1)
+20190221 23:59:21.331 - INFO - +---- END KW: ${item} = {u'updatedAt': u'2016-11-17T17:56:35.881Z', u'id': 4, u'createdAt': u'2016-11-17T17:56:35.881Z', u'name': u'Apple Shop'} (1)
+20190221 23:59:21.331 - INFO - +---- START KW: ${item} = {u'updatedAt': u'2016-11-17T17:56:35.881Z', u'id': 5, u'createdAt': u'2016-11-17T17:56:35.881Z', u'name': u'Hablamos Espa\xf1ol'} [ ]
+20190221 23:59:21.331 - INFO - +----- START KW: RestApiTest.Validate Response With Schema [ services | ${item} ]
+20190221 23:59:21.332 - INFO - {u'title': u'The Root Schema', u'$id': u'http://example.com/root.json', u'required': [u'name'], u'definitions': {}, u'$schema': u'http://json-schema.org/draft-06/schema#', u'type': u'object', u'properties': {u'name': {u'title': u'The Name Schema', u'$id': u'#/properties/name', u'pattern': u'^(.*)$', u'default': u'', u'examples': [u'string'], u'type': u'string'}}}
+20190221 23:59:21.332 - INFO - +----- END KW: RestApiTest.Validate Response With Schema (1)
+20190221 23:59:21.332 - INFO - +---- END KW: ${item} = {u'updatedAt': u'2016-11-17T17:56:35.881Z', u'id': 5, u'createdAt': u'2016-11-17T17:56:35.881Z', u'name': u'Hablamos Espa\xf1ol'} (1)
+20190221 23:59:21.332 - INFO - +---- START KW: ${item} = {u'updatedAt': u'2016-11-17T17:56:35.881Z', u'id': 6, u'createdAt': u'2016-11-17T17:56:35.881Z', u'name': u'Camera Experience Shop '} [ ]
+20190221 23:59:21.332 - INFO - +----- START KW: RestApiTest.Validate Response With Schema [ services | ${item} ]
+20190221 23:59:21.333 - INFO - {u'title': u'The Root Schema', u'$id': u'http://example.com/root.json', u'required': [u'name'], u'definitions': {}, u'$schema': u'http://json-schema.org/draft-06/schema#', u'type': u'object', u'properties': {u'name': {u'title': u'The Name Schema', u'$id': u'#/properties/name', u'pattern': u'^(.*)$', u'default': u'', u'examples': [u'string'], u'type': u'string'}}}
+20190221 23:59:21.333 - INFO - +----- END KW: RestApiTest.Validate Response With Schema (1)
+20190221 23:59:21.333 - INFO - +---- END KW: ${item} = {u'updatedAt': u'2016-11-17T17:56:35.881Z', u'id': 6, u'createdAt': u'2016-11-17T17:56:35.881Z', u'name': u'Camera Experience Shop '} (1)
+20190221 23:59:21.334 - INFO - +---- START KW: ${item} = {u'updatedAt': u'2016-11-17T17:56:35.881Z', u'id': 7, u'createdAt': u'2016-11-17T17:56:35.881Z', u'name': u'Electronics Recycling'} [ ]
+20190221 23:59:21.334 - INFO - +----- START KW: RestApiTest.Validate Response With Schema [ services | ${item} ]
+20190221 23:59:21.334 - INFO - {u'title': u'The Root Schema', u'$id': u'http://example.com/root.json', u'required': [u'name'], u'definitions': {}, u'$schema': u'http://json-schema.org/draft-06/schema#', u'type': u'object', u'properties': {u'name': {u'title': u'The Name Schema', u'$id': u'#/properties/name', u'pattern': u'^(.*)$', u'default': u'', u'examples': [u'string'], u'type': u'string'}}}
+20190221 23:59:21.334 - INFO - +----- END KW: RestApiTest.Validate Response With Schema (0)
+20190221 23:59:21.335 - INFO - +---- END KW: ${item} = {u'updatedAt': u'2016-11-17T17:56:35.881Z', u'id': 7, u'createdAt': u'2016-11-17T17:56:35.881Z', u'name': u'Electronics Recycling'} (1)
+20190221 23:59:21.335 - INFO - +---- START KW: ${item} = {u'updatedAt': u'2016-11-17T17:56:35.881Z', u'id': 8, u'createdAt': u'2016-11-17T17:56:35.881Z', u'name': u'Magnolia Home Theater'} [ ]
+20190221 23:59:21.335 - INFO - +----- START KW: RestApiTest.Validate Response With Schema [ services | ${item} ]
+20190221 23:59:21.335 - INFO - {u'title': u'The Root Schema', u'$id': u'http://example.com/root.json', u'required': [u'name'], u'definitions': {}, u'$schema': u'http://json-schema.org/draft-06/schema#', u'type': u'object', u'properties': {u'name': {u'title': u'The Name Schema', u'$id': u'#/properties/name', u'pattern': u'^(.*)$', u'default': u'', u'examples': [u'string'], u'type': u'string'}}}
+20190221 23:59:21.335 - INFO - +----- END KW: RestApiTest.Validate Response With Schema (0)
+20190221 23:59:21.336 - INFO - +---- END KW: ${item} = {u'updatedAt': u'2016-11-17T17:56:35.881Z', u'id': 8, u'createdAt': u'2016-11-17T17:56:35.881Z', u'name': u'Magnolia Home Theater'} (0)
+20190221 23:59:21.336 - INFO - +---- START KW: ${item} = {u'updatedAt': u'2016-11-17T17:56:35.881Z', u'id': 9, u'createdAt': u'2016-11-17T17:56:35.881Z', u'name': u'Samsung Experience Shop'} [ ]
+20190221 23:59:21.336 - INFO - +----- START KW: RestApiTest.Validate Response With Schema [ services | ${item} ]
+20190221 23:59:21.337 - INFO - {u'title': u'The Root Schema', u'$id': u'http://example.com/root.json', u'required': [u'name'], u'definitions': {}, u'$schema': u'http://json-schema.org/draft-06/schema#', u'type': u'object', u'properties': {u'name': {u'title': u'The Name Schema', u'$id': u'#/properties/name', u'pattern': u'^(.*)$', u'default': u'', u'examples': [u'string'], u'type': u'string'}}}
+20190221 23:59:21.337 - INFO - +----- END KW: RestApiTest.Validate Response With Schema (1)
+20190221 23:59:21.337 - INFO - +---- END KW: ${item} = {u'updatedAt': u'2016-11-17T17:56:35.881Z', u'id': 9, u'createdAt': u'2016-11-17T17:56:35.881Z', u'name': u'Samsung Experience Shop'} (1)
+20190221 23:59:21.337 - INFO - +---- START KW: ${item} = {u'updatedAt': u'2016-11-17T17:56:35.881Z', u'id': 10, u'createdAt': u'2016-11-17T17:56:35.881Z', u'name': u'Windows Store'} [ ]
+20190221 23:59:21.337 - INFO - +----- START KW: RestApiTest.Validate Response With Schema [ services | ${item} ]
+20190221 23:59:21.338 - INFO - {u'title': u'The Root Schema', u'$id': u'http://example.com/root.json', u'required': [u'name'], u'definitions': {}, u'$schema': u'http://json-schema.org/draft-06/schema#', u'type': u'object', u'properties': {u'name': {u'title': u'The Name Schema', u'$id': u'#/properties/name', u'pattern': u'^(.*)$', u'default': u'', u'examples': [u'string'], u'type': u'string'}}}
+20190221 23:59:21.338 - INFO - +----- END KW: RestApiTest.Validate Response With Schema (1)
+20190221 23:59:21.338 - INFO - +---- END KW: ${item} = {u'updatedAt': u'2016-11-17T17:56:35.881Z', u'id': 10, u'createdAt': u'2016-11-17T17:56:35.881Z', u'name': u'Windows Store'} (1)
+20190221 23:59:21.338 - INFO - +--- END KW: ${item} IN [ @{response_data} ] (12)
+------------------------------------------------------------------------------
+20190221 23:59:21.339 - INFO - +-- END TEST: Fetch All records - GET | Validate JSON Schema of the Response (22)
+------------------------------------------------------------------------------
+20190221 23:59:21.339 - INFO - +-- START TEST: Create , Fetch, Update and Delete New record - POST, GET, PATCH, DELETE | Validate JSON Schema of each of the Responses [ ]
+------------------------------------------------------------------------------
+20190221 23:59:21.339 - INFO - +--- START KW: BuiltIn.Set Test Variable [ ${service} | {"name": "Test Create New Service"} ]
+20190221 23:59:21.340 - INFO - ${service} = {"name": "Test Create New Service"}
+20190221 23:59:21.340 - INFO - +--- END KW: BuiltIn.Set Test Variable (1)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+20190221 23:59:21.340 - INFO - +--- START KW: RestApiTest.Test Api Endpoint [ services | POST | {} | ${service} ]
+20190221 23:59:21.341 - DEBUG - POST http://localhost:3030/services
+20190221 23:59:21.348 - INFO - ${result} = True
+20190221 23:59:21.348 - INFO - ${created_service_response} = {u'updatedAt': u'2019-02-21T18:29:21.344Z', u'id': 41, u'createdAt': u'2019-02-21T18:29:21.344Z', u'name': u'Test Create New Service'}
+20190221 23:59:21.348 - INFO - +--- END KW: RestApiTest.Test Api Endpoint (8)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+20190221 23:59:21.348 - INFO - +--- START KW: BuiltIn.Set Test Variable [ ${id} | ${created_service_response["id"]} ]
+20190221 23:59:21.349 - INFO - ${id} = 41
+20190221 23:59:21.350 - INFO - +--- END KW: BuiltIn.Set Test Variable (1)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+20190221 23:59:21.350 - INFO - +--- START KW: BuiltIn.Run Keyword And Continue On Failure [ should be True | ${result} ]
+20190221 23:59:21.350 - INFO - +---- START KW: BuiltIn.Should Be True [ ${result} ]
+20190221 23:59:21.350 - INFO - +---- END KW: BuiltIn.Should Be True (0)
+20190221 23:59:21.350 - INFO - +--- END KW: BuiltIn.Run Keyword And Continue On Failure (0)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+20190221 23:59:21.350 - INFO - +--- START KW: RestApiTest.Validate Response With Schema [ services | ${created_service_response} ]
+20190221 23:59:21.351 - INFO - {u'title': u'The Root Schema', u'$id': u'http://example.com/root.json', u'required': [u'name'], u'definitions': {}, u'$schema': u'http://json-schema.org/draft-06/schema#', u'type': u'object', u'properties': {u'name': {u'title': u'The Name Schema', u'$id': u'#/properties/name', u'pattern': u'^(.*)$', u'default': u'', u'examples': [u'string'], u'type': u'string'}}}
+20190221 23:59:21.351 - INFO - +--- END KW: RestApiTest.Validate Response With Schema (1)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+20190221 23:59:21.352 - INFO - +--- START KW: RestApiTest.Test Api Endpoint [ services/${id} | GET ]
+20190221 23:59:21.352 - DEBUG - GET http://localhost:3030/services/41
+20190221 23:59:21.355 - INFO - ${result} = True
+20190221 23:59:21.355 - INFO - ${response} = {u'updatedAt': u'2019-02-21T18:29:21.344Z', u'id': 41, u'createdAt': u'2019-02-21T18:29:21.344Z', u'name': u'Test Create New Service'}
+20190221 23:59:21.355 - INFO - +--- END KW: RestApiTest.Test Api Endpoint (3)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+20190221 23:59:21.355 - INFO - +--- START KW: BuiltIn.Run Keyword And Continue On Failure [ should be True | ${result} ]
+20190221 23:59:21.356 - INFO - +---- START KW: BuiltIn.Should Be True [ ${result} ]
+20190221 23:59:21.356 - INFO - +---- END KW: BuiltIn.Should Be True (0)
+20190221 23:59:21.356 - INFO - +--- END KW: BuiltIn.Run Keyword And Continue On Failure (1)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+20190221 23:59:21.356 - INFO - +--- START KW: RestApiTest.Validate Response With Schema [ services | ${response} ]
+20190221 23:59:21.357 - INFO - {u'title': u'The Root Schema', u'$id': u'http://example.com/root.json', u'required': [u'name'], u'definitions': {}, u'$schema': u'http://json-schema.org/draft-06/schema#', u'type': u'object', u'properties': {u'name': {u'title': u'The Name Schema', u'$id': u'#/properties/name', u'pattern': u'^(.*)$', u'default': u'', u'examples': [u'string'], u'type': u'string'}}}
+20190221 23:59:21.358 - INFO - +--- END KW: RestApiTest.Validate Response With Schema (2)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+20190221 23:59:21.358 - INFO - +--- START KW: BuiltIn.Set Test Variable [ ${updated_service} | {"name": "Test Update New Service"} ]
+20190221 23:59:21.359 - INFO - ${updated_service} = {"name": "Test Update New Service"}
+20190221 23:59:21.359 - INFO - +--- END KW: BuiltIn.Set Test Variable (1)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+20190221 23:59:21.360 - INFO - +--- START KW: RestApiTest.Test Api Endpoint [ services/${id} | PATCH | {} | ${updated_service} ]
+20190221 23:59:21.360 - DEBUG - PATCH http://localhost:3030/services/41
+20190221 23:59:21.365 - INFO - ${result} = True
+20190221 23:59:21.365 - INFO - ${response} = {u'updatedAt': u'2019-02-21T18:29:21.361Z', u'id': 41, u'createdAt': u'2019-02-21T18:29:21.344Z', u'name': u'Test Update New Service'}
+20190221 23:59:21.365 - INFO - +--- END KW: RestApiTest.Test Api Endpoint (5)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+20190221 23:59:21.365 - INFO - +--- START KW: BuiltIn.Run Keyword And Continue On Failure [ should be True | ${result} ]
+20190221 23:59:21.366 - INFO - +---- START KW: BuiltIn.Should Be True [ ${result} ]
+20190221 23:59:21.366 - INFO - +---- END KW: BuiltIn.Should Be True (0)
+20190221 23:59:21.366 - INFO - +--- END KW: BuiltIn.Run Keyword And Continue On Failure (1)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+20190221 23:59:21.366 - INFO - +--- START KW: RestApiTest.Validate Response With Schema [ services | ${response} ]
+20190221 23:59:21.367 - INFO - {u'title': u'The Root Schema', u'$id': u'http://example.com/root.json', u'required': [u'name'], u'definitions': {}, u'$schema': u'http://json-schema.org/draft-06/schema#', u'type': u'object', u'properties': {u'name': {u'title': u'The Name Schema', u'$id': u'#/properties/name', u'pattern': u'^(.*)$', u'default': u'', u'examples': [u'string'], u'type': u'string'}}}
+20190221 23:59:21.367 - INFO - +--- END KW: RestApiTest.Validate Response With Schema (1)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+20190221 23:59:21.367 - INFO - +--- START KW: RestApiTest.Test Api Endpoint [ services/${id} | DELETE ]
+20190221 23:59:21.368 - DEBUG - DELETE http://localhost:3030/services/41
+20190221 23:59:21.374 - INFO - ${result} = True
+20190221 23:59:21.374 - INFO - ${response} = {u'updatedAt': u'2019-02-21T18:29:21.361Z', u'id': 41, u'createdAt': u'2019-02-21T18:29:21.344Z', u'name': u'Test Update New Service'}
+20190221 23:59:21.375 - INFO - +--- END KW: RestApiTest.Test Api Endpoint (7)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+20190221 23:59:21.375 - INFO - +--- START KW: BuiltIn.Run Keyword And Continue On Failure [ should be True | ${result} ]
+20190221 23:59:21.375 - INFO - +---- START KW: BuiltIn.Should Be True [ ${result} ]
+20190221 23:59:21.375 - INFO - +---- END KW: BuiltIn.Should Be True (0)
+20190221 23:59:21.375 - INFO - +--- END KW: BuiltIn.Run Keyword And Continue On Failure (0)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+20190221 23:59:21.375 - INFO - +--- START KW: RestApiTest.Test Api Endpoint [ services/${id} | GET ]
+20190221 23:59:21.376 - DEBUG - GET http://localhost:3030/services/41
+20190221 23:59:21.378 - INFO - ${result} = True
+20190221 23:59:21.378 - INFO - ${response} = {u'className': u'not-found', u'errors': {}, u'message': u"No record found for id '41'", u'code': 404, u'name': u'NotFound'}
+20190221 23:59:21.379 - INFO - +--- END KW: RestApiTest.Test Api Endpoint (4)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+20190221 23:59:21.379 - INFO - +--- START KW: BuiltIn.Run Keyword And Continue On Failure [ should be True | ${result} ]
+20190221 23:59:21.379 - INFO - +---- START KW: BuiltIn.Should Be True [ ${result} ]
+20190221 23:59:21.379 - INFO - +---- END KW: BuiltIn.Should Be True (0)
+20190221 23:59:21.379 - INFO - +--- END KW: BuiltIn.Run Keyword And Continue On Failure (0)
+------------------------------------------------------------------------------
+20190221 23:59:21.380 - INFO - +-- END TEST: Create , Fetch, Update and Delete New record - POST, GET, PATCH, DELETE | Validate JSON Schema of each of the Responses (40)
+------------------------------------------------------------------------------
+20190221 23:59:21.381 - INFO - +- END SUITE: Categories Endpoint TestSuite & Functional Tests & Products Endpoint TestSuite & Services Endpoint TestSuite & Stores Endpoint TestSuite.Services Endpoint TestSuite (68)
+==============================================================================
+20190221 23:59:21.384 - INFO - +- START SUITE: Categories Endpoint TestSuite & Functional Tests & Products Endpoint TestSuite & Services Endpoint TestSuite & Stores Endpoint TestSuite.Stores Endpoint TestSuite [ ]
+==============================================================================
+20190221 23:59:21.385 - INFO - +-- START SETUP: Initialize Domain [ ${domain} ]
+20190221 23:59:21.385 - INFO - +--- START KW: RestConnection.Initialize Domain [ ${domain} ]
+20190221 23:59:21.385 - INFO - +--- END KW: RestConnection.Initialize Domain (0)
+20190221 23:59:21.385 - INFO - +-- END SETUP: Initialize Domain (0)
+------------------------------------------------------------------------------
+20190221 23:59:21.386 - INFO - +-- START TEST: Fetch All records - GET | Validate JSON Schema of the Response [ ]
+------------------------------------------------------------------------------
+20190221 23:59:21.386 - INFO - +--- START KW: RestApiTest.Test Api Endpoint [ stores | GET ]
+20190221 23:59:21.387 - DEBUG - GET http://localhost:3030/stores
+20190221 23:59:21.407 - INFO - ${result} = True
+20190221 23:59:21.408 - INFO - ${response} = {u'skip': 0, u'total': 1587, u'limit': 10, u'data': [{u'city': u'Hopkins', u'name': u'Minnetonka', u'zip': u'55305', u'address2': u'', u'updatedAt': u'2016-11-17T17:57:05.708Z', u'hours': u'Mon: 10-9;...
+20190221 23:59:21.408 - INFO - +--- END KW: RestApiTest.Test Api Endpoint (22)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+20190221 23:59:21.408 - INFO - +--- START KW: BuiltIn.Run Keyword And Continue On Failure [ should be True | ${result} ]
+20190221 23:59:21.409 - INFO - +---- START KW: BuiltIn.Should Be True [ ${result} ]
+20190221 23:59:21.409 - INFO - +---- END KW: BuiltIn.Should Be True (0)
+20190221 23:59:21.409 - INFO - +--- END KW: BuiltIn.Run Keyword And Continue On Failure (1)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+20190221 23:59:21.409 - INFO - +--- START KW: BuiltIn.Set Test Variable [ ${response_data} | ${response["data"]} ]
+20190221 23:59:21.411 - INFO - ${response_data} = [{u'city': u'Hopkins', u'name': u'Minnetonka', u'zip': u'55305', u'address2': u'', u'updatedAt': u'2016-11-17T17:57:05.708Z', u'hours': u'Mon: 10-9; Tue: 10-9; Wed: 10-9; Thurs: 10-9; Fri: 10-9; Sat: ...
+20190221 23:59:21.411 - INFO - +--- END KW: BuiltIn.Set Test Variable (2)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+20190221 23:59:21.411 - INFO - +--- START KW: ${item} IN [ @{response_data} ] [ ]
+20190221 23:59:21.411 - INFO - +---- START KW: ${item} = {u'city': u'Hopkins', u'name': u'Minnetonka', u'zip': u'55305', u'address2': u'', u'updatedAt': u'2016-11-17T17:57:05.708Z', u'hours': u'Mon: 10-9; Tue: 10-9; Wed: 10-9; Thurs: 10-9; Fri: 10-9; Sat: 1... [ ]
+20190221 23:59:21.411 - INFO - +----- START KW: RestApiTest.Validate Response With Schema [ stores | ${item} ]
+20190221 23:59:21.412 - INFO - {u'title': u'The Root Schema', u'$id': u'http://example.com/root.json', u'required': [u'name', u'address', u'address2', u'city', u'state', u'zip', u'lat', u'lng', u'hours'], u'definitions': {}, u'$schema': u'http://json-schema.org/draft-06/schema#', u'type': u'object', u'properties': {u'city': {u'title': u'The City Schema', u'$id': u'#/properties/city', u'pattern': u'^(.*)$', u'default': u'', u'examples': [u'string'], u'type': u'string'}, u'name': {u'title': u'The Name Schema', u'$id': u'#/properties/name', u'pattern': u'^(.*)$', u'default': u'', u'examples': [u'string'], u'type': u'string'}, u'zip': {u'title': u'The Zip Schema', u'$id': u'#/properties/zip', u'pattern': u'^(.*)$', u'default': u'', u'examples': [u'string'], u'type': u'string'}, u'address2': {u'title': u'The Address2 Schema', u'$id': u'#/properties/address2', u'pattern': u'^(.*)$', u'default': u'', u'examples': [u'string'], u'type': u'string'}, u'hours': {u'title': u'The Hours Schema', u'$id': u'#/properties/hours', u'pattern': u'^(.*)$', u'default': u'', u'examples': [u'string'], u'type': u'string'}, u'state': {u'title': u'The State Schema', u'$id': u'#/properties/state', u'pattern': u'^(.*)$', u'default': u'', u'examples': [u'string'], u'type': u'string'}, u'address': {u'title': u'The Address Schema', u'$id': u'#/properties/address', u'pattern': u'^(.*)$', u'default': u'', u'examples': [u'string'], u'type': u'string'}, u'lat': {u'$id': u'#/properties/lat', u'default': 0.0, u'type': u'number', u'examples': [28.365], u'title': u'The Lat Schema'}, u'lng': {u'$id': u'#/properties/lng', u'default': 0.0, u'type': u'number', u'examples': [-96.4567], u'title': u'The Lng Schema'}}}
+20190221 23:59:21.413 - INFO - +----- END KW: RestApiTest.Validate Response With Schema (1)
+20190221 23:59:21.413 - INFO - +---- END KW: ${item} = {u'city': u'Hopkins', u'name': u'Minnetonka', u'zip': u'55305', u'address2': u'', u'updatedAt': u'2016-11-17T17:57:05.708Z', u'hours': u'Mon: 10-9; Tue: 10-9; Wed: 10-9; Thurs: 10-9; Fri: 10-9; Sat: 1... (2)
+20190221 23:59:21.413 - INFO - +---- START KW: ${item} = {u'city': u'Inver Grove Heights', u'name': u'Inver Grove Heights', u'zip': u'55077', u'address2': u'', u'updatedAt': u'2016-11-17T17:57:05.831Z', u'hours': u'Mon: 10-9; Tue: 10-9; Wed: 10-9; Thurs: 10... [ ]
+20190221 23:59:21.413 - INFO - +----- START KW: RestApiTest.Validate Response With Schema [ stores | ${item} ]
+20190221 23:59:21.415 - INFO - {u'title': u'The Root Schema', u'$id': u'http://example.com/root.json', u'required': [u'name', u'address', u'address2', u'city', u'state', u'zip', u'lat', u'lng', u'hours'], u'definitions': {}, u'$schema': u'http://json-schema.org/draft-06/schema#', u'type': u'object', u'properties': {u'city': {u'title': u'The City Schema', u'$id': u'#/properties/city', u'pattern': u'^(.*)$', u'default': u'', u'examples': [u'string'], u'type': u'string'}, u'name': {u'title': u'The Name Schema', u'$id': u'#/properties/name', u'pattern': u'^(.*)$', u'default': u'', u'examples': [u'string'], u'type': u'string'}, u'zip': {u'title': u'The Zip Schema', u'$id': u'#/properties/zip', u'pattern': u'^(.*)$', u'default': u'', u'examples': [u'string'], u'type': u'string'}, u'address2': {u'title': u'The Address2 Schema', u'$id': u'#/properties/address2', u'pattern': u'^(.*)$', u'default': u'', u'examples': [u'string'], u'type': u'string'}, u'hours': {u'title': u'The Hours Schema', u'$id': u'#/properties/hours', u'pattern': u'^(.*)$', u'default': u'', u'examples': [u'string'], u'type': u'string'}, u'state': {u'title': u'The State Schema', u'$id': u'#/properties/state', u'pattern': u'^(.*)$', u'default': u'', u'examples': [u'string'], u'type': u'string'}, u'address': {u'title': u'The Address Schema', u'$id': u'#/properties/address', u'pattern': u'^(.*)$', u'default': u'', u'examples': [u'string'], u'type': u'string'}, u'lat': {u'$id': u'#/properties/lat', u'default': 0.0, u'type': u'number', u'examples': [28.365], u'title': u'The Lat Schema'}, u'lng': {u'$id': u'#/properties/lng', u'default': 0.0, u'type': u'number', u'examples': [-96.4567], u'title': u'The Lng Schema'}}}
+20190221 23:59:21.415 - INFO - +----- END KW: RestApiTest.Validate Response With Schema (2)
+20190221 23:59:21.415 - INFO - +---- END KW: ${item} = {u'city': u'Inver Grove Heights', u'name': u'Inver Grove Heights', u'zip': u'55077', u'address2': u'', u'updatedAt': u'2016-11-17T17:57:05.831Z', u'hours': u'Mon: 10-9; Tue: 10-9; Wed: 10-9; Thurs: 10... (2)
+20190221 23:59:21.415 - INFO - +---- START KW: ${item} = {u'city': u'Roseville', u'name': u'Roseville', u'zip': u'55113', u'address2': u'', u'updatedAt': u'2016-11-17T17:57:05.853Z', u'hours': u'Mon: 10-9; Tue: 10-9; Wed: 10-9; Thurs: 10-9; Fri: 10-9; Sat: ... [ ]
+20190221 23:59:21.416 - INFO - +----- START KW: RestApiTest.Validate Response With Schema [ stores | ${item} ]
+20190221 23:59:21.417 - INFO - {u'title': u'The Root Schema', u'$id': u'http://example.com/root.json', u'required': [u'name', u'address', u'address2', u'city', u'state', u'zip', u'lat', u'lng', u'hours'], u'definitions': {}, u'$schema': u'http://json-schema.org/draft-06/schema#', u'type': u'object', u'properties': {u'city': {u'title': u'The City Schema', u'$id': u'#/properties/city', u'pattern': u'^(.*)$', u'default': u'', u'examples': [u'string'], u'type': u'string'}, u'name': {u'title': u'The Name Schema', u'$id': u'#/properties/name', u'pattern': u'^(.*)$', u'default': u'', u'examples': [u'string'], u'type': u'string'}, u'zip': {u'title': u'The Zip Schema', u'$id': u'#/properties/zip', u'pattern': u'^(.*)$', u'default': u'', u'examples': [u'string'], u'type': u'string'}, u'address2': {u'title': u'The Address2 Schema', u'$id': u'#/properties/address2', u'pattern': u'^(.*)$', u'default': u'', u'examples': [u'string'], u'type': u'string'}, u'hours': {u'title': u'The Hours Schema', u'$id': u'#/properties/hours', u'pattern': u'^(.*)$', u'default': u'', u'examples': [u'string'], u'type': u'string'}, u'state': {u'title': u'The State Schema', u'$id': u'#/properties/state', u'pattern': u'^(.*)$', u'default': u'', u'examples': [u'string'], u'type': u'string'}, u'address': {u'title': u'The Address Schema', u'$id': u'#/properties/address', u'pattern': u'^(.*)$', u'default': u'', u'examples': [u'string'], u'type': u'string'}, u'lat': {u'$id': u'#/properties/lat', u'default': 0.0, u'type': u'number', u'examples': [28.365], u'title': u'The Lat Schema'}, u'lng': {u'$id': u'#/properties/lng', u'default': 0.0, u'type': u'number', u'examples': [-96.4567], u'title': u'The Lng Schema'}}}
+20190221 23:59:21.418 - INFO - +----- END KW: RestApiTest.Validate Response With Schema (2)
+20190221 23:59:21.418 - INFO - +---- END KW: ${item} = {u'city': u'Roseville', u'name': u'Roseville', u'zip': u'55113', u'address2': u'', u'updatedAt': u'2016-11-17T17:57:05.853Z', u'hours': u'Mon: 10-9; Tue: 10-9; Wed: 10-9; Thurs: 10-9; Fri: 10-9; Sat: ... (3)
+20190221 23:59:21.418 - INFO - +---- START KW: ${item} = {u'city': u'Burnsville', u'name': u'Burnsville', u'zip': u'55337', u'address2': u'', u'updatedAt': u'2016-11-17T17:57:06.108Z', u'hours': u'Mon: 10-9; Tue: 10-9; Wed: 10-9; Thurs: 10-9; Fri: 10-9; Sat... [ ]
+20190221 23:59:21.418 - INFO - +----- START KW: RestApiTest.Validate Response With Schema [ stores | ${item} ]
+20190221 23:59:21.419 - INFO - {u'title': u'The Root Schema', u'$id': u'http://example.com/root.json', u'required': [u'name', u'address', u'address2', u'city', u'state', u'zip', u'lat', u'lng', u'hours'], u'definitions': {}, u'$schema': u'http://json-schema.org/draft-06/schema#', u'type': u'object', u'properties': {u'city': {u'title': u'The City Schema', u'$id': u'#/properties/city', u'pattern': u'^(.*)$', u'default': u'', u'examples': [u'string'], u'type': u'string'}, u'name': {u'title': u'The Name Schema', u'$id': u'#/properties/name', u'pattern': u'^(.*)$', u'default': u'', u'examples': [u'string'], u'type': u'string'}, u'zip': {u'title': u'The Zip Schema', u'$id': u'#/properties/zip', u'pattern': u'^(.*)$', u'default': u'', u'examples': [u'string'], u'type': u'string'}, u'address2': {u'title': u'The Address2 Schema', u'$id': u'#/properties/address2', u'pattern': u'^(.*)$', u'default': u'', u'examples': [u'string'], u'type': u'string'}, u'hours': {u'title': u'The Hours Schema', u'$id': u'#/properties/hours', u'pattern': u'^(.*)$', u'default': u'', u'examples': [u'string'], u'type': u'string'}, u'state': {u'title': u'The State Schema', u'$id': u'#/properties/state', u'pattern': u'^(.*)$', u'default': u'', u'examples': [u'string'], u'type': u'string'}, u'address': {u'title': u'The Address Schema', u'$id': u'#/properties/address', u'pattern': u'^(.*)$', u'default': u'', u'examples': [u'string'], u'type': u'string'}, u'lat': {u'$id': u'#/properties/lat', u'default': 0.0, u'type': u'number', u'examples': [28.365], u'title': u'The Lat Schema'}, u'lng': {u'$id': u'#/properties/lng', u'default': 0.0, u'type': u'number', u'examples': [-96.4567], u'title': u'The Lng Schema'}}}
+20190221 23:59:21.419 - INFO - +----- END KW: RestApiTest.Validate Response With Schema (1)
+20190221 23:59:21.419 - INFO - +---- END KW: ${item} = {u'city': u'Burnsville', u'name': u'Burnsville', u'zip': u'55337', u'address2': u'', u'updatedAt': u'2016-11-17T17:57:06.108Z', u'hours': u'Mon: 10-9; Tue: 10-9; Wed: 10-9; Thurs: 10-9; Fri: 10-9; Sat... (1)
+20190221 23:59:21.420 - INFO - +---- START KW: ${item} = {u'city': u'Maplewood', u'name': u'Maplewood', u'zip': u'55109', u'address2': u'', u'updatedAt': u'2016-11-17T17:57:04.414Z', u'hours': u'Mon: 10-9; Tue: 10-9; Wed: 10-9; Thurs: 10-9; Fri: 10-9; Sat: ... [ ]
+20190221 23:59:21.420 - INFO - +----- START KW: RestApiTest.Validate Response With Schema [ stores | ${item} ]
+20190221 23:59:21.421 - INFO - {u'title': u'The Root Schema', u'$id': u'http://example.com/root.json', u'required': [u'name', u'address', u'address2', u'city', u'state', u'zip', u'lat', u'lng', u'hours'], u'definitions': {}, u'$schema': u'http://json-schema.org/draft-06/schema#', u'type': u'object', u'properties': {u'city': {u'title': u'The City Schema', u'$id': u'#/properties/city', u'pattern': u'^(.*)$', u'default': u'', u'examples': [u'string'], u'type': u'string'}, u'name': {u'title': u'The Name Schema', u'$id': u'#/properties/name', u'pattern': u'^(.*)$', u'default': u'', u'examples': [u'string'], u'type': u'string'}, u'zip': {u'title': u'The Zip Schema', u'$id': u'#/properties/zip', u'pattern': u'^(.*)$', u'default': u'', u'examples': [u'string'], u'type': u'string'}, u'address2': {u'title': u'The Address2 Schema', u'$id': u'#/properties/address2', u'pattern': u'^(.*)$', u'default': u'', u'examples': [u'string'], u'type': u'string'}, u'hours': {u'title': u'The Hours Schema', u'$id': u'#/properties/hours', u'pattern': u'^(.*)$', u'default': u'', u'examples': [u'string'], u'type': u'string'}, u'state': {u'title': u'The State Schema', u'$id': u'#/properties/state', u'pattern': u'^(.*)$', u'default': u'', u'examples': [u'string'], u'type': u'string'}, u'address': {u'title': u'The Address Schema', u'$id': u'#/properties/address', u'pattern': u'^(.*)$', u'default': u'', u'examples': [u'string'], u'type': u'string'}, u'lat': {u'$id': u'#/properties/lat', u'default': 0.0, u'type': u'number', u'examples': [28.365], u'title': u'The Lat Schema'}, u'lng': {u'$id': u'#/properties/lng', u'default': 0.0, u'type': u'number', u'examples': [-96.4567], u'title': u'The Lng Schema'}}}
+20190221 23:59:21.421 - INFO - +----- END KW: RestApiTest.Validate Response With Schema (1)
+20190221 23:59:21.421 - INFO - +---- END KW: ${item} = {u'city': u'Maplewood', u'name': u'Maplewood', u'zip': u'55109', u'address2': u'', u'updatedAt': u'2016-11-17T17:57:04.414Z', u'hours': u'Mon: 10-9; Tue: 10-9; Wed: 10-9; Thurs: 10-9; Fri: 10-9; Sat: ... (1)
+20190221 23:59:21.421 - INFO - +---- START KW: ${item} = {u'city': u'Blaine', u'name': u'Northtown', u'zip': u'55434', u'address2': u'', u'updatedAt': u'2016-11-17T17:57:04.542Z', u'hours': u'Mon: 10-9; Tue: 10-9; Wed: 10-9; Thurs: 10-9; Fri: 10-9; Sat: 10-... [ ]
+20190221 23:59:21.421 - INFO - +----- START KW: RestApiTest.Validate Response With Schema [ stores | ${item} ]
+20190221 23:59:21.423 - INFO - {u'title': u'The Root Schema', u'$id': u'http://example.com/root.json', u'required': [u'name', u'address', u'address2', u'city', u'state', u'zip', u'lat', u'lng', u'hours'], u'definitions': {}, u'$schema': u'http://json-schema.org/draft-06/schema#', u'type': u'object', u'properties': {u'city': {u'title': u'The City Schema', u'$id': u'#/properties/city', u'pattern': u'^(.*)$', u'default': u'', u'examples': [u'string'], u'type': u'string'}, u'name': {u'title': u'The Name Schema', u'$id': u'#/properties/name', u'pattern': u'^(.*)$', u'default': u'', u'examples': [u'string'], u'type': u'string'}, u'zip': {u'title': u'The Zip Schema', u'$id': u'#/properties/zip', u'pattern': u'^(.*)$', u'default': u'', u'examples': [u'string'], u'type': u'string'}, u'address2': {u'title': u'The Address2 Schema', u'$id': u'#/properties/address2', u'pattern': u'^(.*)$', u'default': u'', u'examples': [u'string'], u'type': u'string'}, u'hours': {u'title': u'The Hours Schema', u'$id': u'#/properties/hours', u'pattern': u'^(.*)$', u'default': u'', u'examples': [u'string'], u'type': u'string'}, u'state': {u'title': u'The State Schema', u'$id': u'#/properties/state', u'pattern': u'^(.*)$', u'default': u'', u'examples': [u'string'], u'type': u'string'}, u'address': {u'title': u'The Address Schema', u'$id': u'#/properties/address', u'pattern': u'^(.*)$', u'default': u'', u'examples': [u'string'], u'type': u'string'}, u'lat': {u'$id': u'#/properties/lat', u'default': 0.0, u'type': u'number', u'examples': [28.365], u'title': u'The Lat Schema'}, u'lng': {u'$id': u'#/properties/lng', u'default': 0.0, u'type': u'number', u'examples': [-96.4567], u'title': u'The Lng Schema'}}}
+20190221 23:59:21.423 - INFO - +----- END KW: RestApiTest.Validate Response With Schema (2)
+20190221 23:59:21.423 - INFO - +---- END KW: ${item} = {u'city': u'Blaine', u'name': u'Northtown', u'zip': u'55434', u'address2': u'', u'updatedAt': u'2016-11-17T17:57:04.542Z', u'hours': u'Mon: 10-9; Tue: 10-9; Wed: 10-9; Thurs: 10-9; Fri: 10-9; Sat: 10-... (2)
+20190221 23:59:21.423 - INFO - +---- START KW: ${item} = {u'city': u'Saint Cloud', u'name': u'St Cloud', u'zip': u'56301', u'address2': u'', u'updatedAt': u'2016-11-17T17:57:04.575Z', u'hours': u'Mon: 10-9; Tue: 10-9; Wed: 10-9; Thurs: 10-9; Fri: 9-9; Sat: ... [ ]
+20190221 23:59:21.423 - INFO - +----- START KW: RestApiTest.Validate Response With Schema [ stores | ${item} ]
+20190221 23:59:21.425 - INFO - {u'title': u'The Root Schema', u'$id': u'http://example.com/root.json', u'required': [u'name', u'address', u'address2', u'city', u'state', u'zip', u'lat', u'lng', u'hours'], u'definitions': {}, u'$schema': u'http://json-schema.org/draft-06/schema#', u'type': u'object', u'properties': {u'city': {u'title': u'The City Schema', u'$id': u'#/properties/city', u'pattern': u'^(.*)$', u'default': u'', u'examples': [u'string'], u'type': u'string'}, u'name': {u'title': u'The Name Schema', u'$id': u'#/properties/name', u'pattern': u'^(.*)$', u'default': u'', u'examples': [u'string'], u'type': u'string'}, u'zip': {u'title': u'The Zip Schema', u'$id': u'#/properties/zip', u'pattern': u'^(.*)$', u'default': u'', u'examples': [u'string'], u'type': u'string'}, u'address2': {u'title': u'The Address2 Schema', u'$id': u'#/properties/address2', u'pattern': u'^(.*)$', u'default': u'', u'examples': [u'string'], u'type': u'string'}, u'hours': {u'title': u'The Hours Schema', u'$id': u'#/properties/hours', u'pattern': u'^(.*)$', u'default': u'', u'examples': [u'string'], u'type': u'string'}, u'state': {u'title': u'The State Schema', u'$id': u'#/properties/state', u'pattern': u'^(.*)$', u'default': u'', u'examples': [u'string'], u'type': u'string'}, u'address': {u'title': u'The Address Schema', u'$id': u'#/properties/address', u'pattern': u'^(.*)$', u'default': u'', u'examples': [u'string'], u'type': u'string'}, u'lat': {u'$id': u'#/properties/lat', u'default': 0.0, u'type': u'number', u'examples': [28.365], u'title': u'The Lat Schema'}, u'lng': {u'$id': u'#/properties/lng', u'default': 0.0, u'type': u'number', u'examples': [-96.4567], u'title': u'The Lng Schema'}}}
+20190221 23:59:21.425 - INFO - +----- END KW: RestApiTest.Validate Response With Schema (2)
+20190221 23:59:21.425 - INFO - +---- END KW: ${item} = {u'city': u'Saint Cloud', u'name': u'St Cloud', u'zip': u'56301', u'address2': u'', u'updatedAt': u'2016-11-17T17:57:04.575Z', u'hours': u'Mon: 10-9; Tue: 10-9; Wed: 10-9; Thurs: 10-9; Fri: 9-9; Sat: ... (2)
+20190221 23:59:21.425 - INFO - +---- START KW: ${item} = {u'city': u'Fargo', u'name': u'Fargo', u'zip': u'58103', u'address2': u'', u'updatedAt': u'2016-11-17T17:57:04.603Z', u'hours': u'Mon: 10-9; Tue: 10-9; Wed: 10-9; Thurs: 10-9; Fri: 9-9; Sat: 9-9; Sun:... [ ]
+20190221 23:59:21.425 - INFO - +----- START KW: RestApiTest.Validate Response With Schema [ stores | ${item} ]
+20190221 23:59:21.426 - INFO - {u'title': u'The Root Schema', u'$id': u'http://example.com/root.json', u'required': [u'name', u'address', u'address2', u'city', u'state', u'zip', u'lat', u'lng', u'hours'], u'definitions': {}, u'$schema': u'http://json-schema.org/draft-06/schema#', u'type': u'object', u'properties': {u'city': {u'title': u'The City Schema', u'$id': u'#/properties/city', u'pattern': u'^(.*)$', u'default': u'', u'examples': [u'string'], u'type': u'string'}, u'name': {u'title': u'The Name Schema', u'$id': u'#/properties/name', u'pattern': u'^(.*)$', u'default': u'', u'examples': [u'string'], u'type': u'string'}, u'zip': {u'title': u'The Zip Schema', u'$id': u'#/properties/zip', u'pattern': u'^(.*)$', u'default': u'', u'examples': [u'string'], u'type': u'string'}, u'address2': {u'title': u'The Address2 Schema', u'$id': u'#/properties/address2', u'pattern': u'^(.*)$', u'default': u'', u'examples': [u'string'], u'type': u'string'}, u'hours': {u'title': u'The Hours Schema', u'$id': u'#/properties/hours', u'pattern': u'^(.*)$', u'default': u'', u'examples': [u'string'], u'type': u'string'}, u'state': {u'title': u'The State Schema', u'$id': u'#/properties/state', u'pattern': u'^(.*)$', u'default': u'', u'examples': [u'string'], u'type': u'string'}, u'address': {u'title': u'The Address Schema', u'$id': u'#/properties/address', u'pattern': u'^(.*)$', u'default': u'', u'examples': [u'string'], u'type': u'string'}, u'lat': {u'$id': u'#/properties/lat', u'default': 0.0, u'type': u'number', u'examples': [28.365], u'title': u'The Lat Schema'}, u'lng': {u'$id': u'#/properties/lng', u'default': 0.0, u'type': u'number', u'examples': [-96.4567], u'title': u'The Lng Schema'}}}
+20190221 23:59:21.426 - INFO - +----- END KW: RestApiTest.Validate Response With Schema (1)
+20190221 23:59:21.426 - INFO - +---- END KW: ${item} = {u'city': u'Fargo', u'name': u'Fargo', u'zip': u'58103', u'address2': u'', u'updatedAt': u'2016-11-17T17:57:04.603Z', u'hours': u'Mon: 10-9; Tue: 10-9; Wed: 10-9; Thurs: 10-9; Fri: 9-9; Sat: 9-9; Sun:... (1)
+20190221 23:59:21.427 - INFO - +---- START KW: ${item} = {u'city': u'Rochester', u'name': u'Rochester', u'zip': u'55901', u'address2': u'', u'updatedAt': u'2016-11-17T17:57:04.756Z', u'hours': u'Mon: 10-9; Tue: 10-9; Wed: 10-9; Thurs: 10-9; Fri: 10-9; Sat: ... [ ]
+20190221 23:59:21.427 - INFO - +----- START KW: RestApiTest.Validate Response With Schema [ stores | ${item} ]
+20190221 23:59:21.428 - INFO - {u'title': u'The Root Schema', u'$id': u'http://example.com/root.json', u'required': [u'name', u'address', u'address2', u'city', u'state', u'zip', u'lat', u'lng', u'hours'], u'definitions': {}, u'$schema': u'http://json-schema.org/draft-06/schema#', u'type': u'object', u'properties': {u'city': {u'title': u'The City Schema', u'$id': u'#/properties/city', u'pattern': u'^(.*)$', u'default': u'', u'examples': [u'string'], u'type': u'string'}, u'name': {u'title': u'The Name Schema', u'$id': u'#/properties/name', u'pattern': u'^(.*)$', u'default': u'', u'examples': [u'string'], u'type': u'string'}, u'zip': {u'title': u'The Zip Schema', u'$id': u'#/properties/zip', u'pattern': u'^(.*)$', u'default': u'', u'examples': [u'string'], u'type': u'string'}, u'address2': {u'title': u'The Address2 Schema', u'$id': u'#/properties/address2', u'pattern': u'^(.*)$', u'default': u'', u'examples': [u'string'], u'type': u'string'}, u'hours': {u'title': u'The Hours Schema', u'$id': u'#/properties/hours', u'pattern': u'^(.*)$', u'default': u'', u'examples': [u'string'], u'type': u'string'}, u'state': {u'title': u'The State Schema', u'$id': u'#/properties/state', u'pattern': u'^(.*)$', u'default': u'', u'examples': [u'string'], u'type': u'string'}, u'address': {u'title': u'The Address Schema', u'$id': u'#/properties/address', u'pattern': u'^(.*)$', u'default': u'', u'examples': [u'string'], u'type': u'string'}, u'lat': {u'$id': u'#/properties/lat', u'default': 0.0, u'type': u'number', u'examples': [28.365], u'title': u'The Lat Schema'}, u'lng': {u'$id': u'#/properties/lng', u'default': 0.0, u'type': u'number', u'examples': [-96.4567], u'title': u'The Lng Schema'}}}
+20190221 23:59:21.428 - INFO - +----- END KW: RestApiTest.Validate Response With Schema (1)
+20190221 23:59:21.428 - INFO - +---- END KW: ${item} = {u'city': u'Rochester', u'name': u'Rochester', u'zip': u'55901', u'address2': u'', u'updatedAt': u'2016-11-17T17:57:04.756Z', u'hours': u'Mon: 10-9; Tue: 10-9; Wed: 10-9; Thurs: 10-9; Fri: 10-9; Sat: ... (1)
+20190221 23:59:21.428 - INFO - +---- START KW: ${item} = {u'city': u'Oakdale', u'name': u'Oakdale', u'zip': u'55128', u'address2': u'', u'updatedAt': u'2016-11-17T17:57:04.813Z', u'hours': u'Mon: 10-9; Tue: 10-9; Wed: 10-9; Thurs: 10-9; Fri: 10-9; Sat: 10-9... [ ]
+20190221 23:59:21.428 - INFO - +----- START KW: RestApiTest.Validate Response With Schema [ stores | ${item} ]
+20190221 23:59:21.429 - INFO - {u'title': u'The Root Schema', u'$id': u'http://example.com/root.json', u'required': [u'name', u'address', u'address2', u'city', u'state', u'zip', u'lat', u'lng', u'hours'], u'definitions': {}, u'$schema': u'http://json-schema.org/draft-06/schema#', u'type': u'object', u'properties': {u'city': {u'title': u'The City Schema', u'$id': u'#/properties/city', u'pattern': u'^(.*)$', u'default': u'', u'examples': [u'string'], u'type': u'string'}, u'name': {u'title': u'The Name Schema', u'$id': u'#/properties/name', u'pattern': u'^(.*)$', u'default': u'', u'examples': [u'string'], u'type': u'string'}, u'zip': {u'title': u'The Zip Schema', u'$id': u'#/properties/zip', u'pattern': u'^(.*)$', u'default': u'', u'examples': [u'string'], u'type': u'string'}, u'address2': {u'title': u'The Address2 Schema', u'$id': u'#/properties/address2', u'pattern': u'^(.*)$', u'default': u'', u'examples': [u'string'], u'type': u'string'}, u'hours': {u'title': u'The Hours Schema', u'$id': u'#/properties/hours', u'pattern': u'^(.*)$', u'default': u'', u'examples': [u'string'], u'type': u'string'}, u'state': {u'title': u'The State Schema', u'$id': u'#/properties/state', u'pattern': u'^(.*)$', u'default': u'', u'examples': [u'string'], u'type': u'string'}, u'address': {u'title': u'The Address Schema', u'$id': u'#/properties/address', u'pattern': u'^(.*)$', u'default': u'', u'examples': [u'string'], u'type': u'string'}, u'lat': {u'$id': u'#/properties/lat', u'default': 0.0, u'type': u'number', u'examples': [28.365], u'title': u'The Lat Schema'}, u'lng': {u'$id': u'#/properties/lng', u'default': 0.0, u'type': u'number', u'examples': [-96.4567], u'title': u'The Lng Schema'}}}
+20190221 23:59:21.430 - INFO - +----- END KW: RestApiTest.Validate Response With Schema (2)
+20190221 23:59:21.430 - INFO - +---- END KW: ${item} = {u'city': u'Oakdale', u'name': u'Oakdale', u'zip': u'55128', u'address2': u'', u'updatedAt': u'2016-11-17T17:57:04.813Z', u'hours': u'Mon: 10-9; Tue: 10-9; Wed: 10-9; Thurs: 10-9; Fri: 10-9; Sat: 10-9... (2)
+20190221 23:59:21.430 - INFO - +--- END KW: ${item} IN [ @{response_data} ] (19)
+------------------------------------------------------------------------------
+20190221 23:59:21.430 - INFO - +-- END TEST: Fetch All records - GET | Validate JSON Schema of the Response (44)
+------------------------------------------------------------------------------
+20190221 23:59:21.430 - INFO - +-- START TEST: Create , Fetch, Update and Delete New record - POST, GET, PATCH, DELETE | Validate JSON Schema of each of the Responses [ ]
+------------------------------------------------------------------------------
+20190221 23:59:21.431 - INFO - +--- START KW: BuiltIn.Set Test Variable [ ${store} | {"name": "Test Create New Store","type": "BigBox","address": "123 Fake St","address2": "","city": "Springfield","state": "MN","zip": "55123","lat": 44.969658,"lng": -93.449539,"hours": "Mon: 10-9; Tue: 10-9; Wed: 10-9; Thurs: 10-9; Fri: 10-9; Sat: 10-9; Sun: 10-8"} ]
+20190221 23:59:21.431 - INFO - ${store} = {"name": "Test Create New Store","type": "BigBox","address": "123 Fake St","address2": "","city": "Springfield","state": "MN","zip": "55123","lat": 44.969658,"lng": -93.449539,"hours": "Mon: 10-9; Tue...
+20190221 23:59:21.432 - INFO - +--- END KW: BuiltIn.Set Test Variable (1)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+20190221 23:59:21.432 - INFO - +--- START KW: RestApiTest.Test Api Endpoint [ stores | POST | {} | ${store} ]
+20190221 23:59:21.432 - DEBUG - POST http://localhost:3030/stores
+20190221 23:59:21.441 - INFO - ${result} = True
+20190221 23:59:21.441 - INFO - ${created_store_response} = {u'city': u'Springfield', u'name': u'Test Create New Store', u'zip': u'55123', u'address2': u'', u'updatedAt': u'2019-02-21T18:29:21.437Z', u'hours': u'Mon: 10-9; Tue: 10-9; Wed: 10-9; Thurs: 10-9; Fr...
+20190221 23:59:21.441 - INFO - +--- END KW: RestApiTest.Test Api Endpoint (9)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+20190221 23:59:21.442 - INFO - +--- START KW: BuiltIn.Set Test Variable [ ${id} | ${created_store_response["id"]} ]
+20190221 23:59:21.443 - INFO - ${id} = 8977
+20190221 23:59:21.443 - INFO - +--- END KW: BuiltIn.Set Test Variable (1)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+20190221 23:59:21.443 - INFO - +--- START KW: BuiltIn.Run Keyword And Continue On Failure [ should be True | ${result} ]
+20190221 23:59:21.443 - INFO - +---- START KW: BuiltIn.Should Be True [ ${result} ]
+20190221 23:59:21.443 - INFO - +---- END KW: BuiltIn.Should Be True (0)
+20190221 23:59:21.443 - INFO - +--- END KW: BuiltIn.Run Keyword And Continue On Failure (0)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+20190221 23:59:21.444 - INFO - +--- START KW: RestApiTest.Validate Response With Schema [ stores | ${created_store_response} ]
+20190221 23:59:21.445 - INFO - {u'title': u'The Root Schema', u'$id': u'http://example.com/root.json', u'required': [u'name', u'address', u'address2', u'city', u'state', u'zip', u'lat', u'lng', u'hours'], u'definitions': {}, u'$schema': u'http://json-schema.org/draft-06/schema#', u'type': u'object', u'properties': {u'city': {u'title': u'The City Schema', u'$id': u'#/properties/city', u'pattern': u'^(.*)$', u'default': u'', u'examples': [u'string'], u'type': u'string'}, u'name': {u'title': u'The Name Schema', u'$id': u'#/properties/name', u'pattern': u'^(.*)$', u'default': u'', u'examples': [u'string'], u'type': u'string'}, u'zip': {u'title': u'The Zip Schema', u'$id': u'#/properties/zip', u'pattern': u'^(.*)$', u'default': u'', u'examples': [u'string'], u'type': u'string'}, u'address2': {u'title': u'The Address2 Schema', u'$id': u'#/properties/address2', u'pattern': u'^(.*)$', u'default': u'', u'examples': [u'string'], u'type': u'string'}, u'hours': {u'title': u'The Hours Schema', u'$id': u'#/properties/hours', u'pattern': u'^(.*)$', u'default': u'', u'examples': [u'string'], u'type': u'string'}, u'state': {u'title': u'The State Schema', u'$id': u'#/properties/state', u'pattern': u'^(.*)$', u'default': u'', u'examples': [u'string'], u'type': u'string'}, u'address': {u'title': u'The Address Schema', u'$id': u'#/properties/address', u'pattern': u'^(.*)$', u'default': u'', u'examples': [u'string'], u'type': u'string'}, u'lat': {u'$id': u'#/properties/lat', u'default': 0.0, u'type': u'number', u'examples': [28.365], u'title': u'The Lat Schema'}, u'lng': {u'$id': u'#/properties/lng', u'default': 0.0, u'type': u'number', u'examples': [-96.4567], u'title': u'The Lng Schema'}}}
+20190221 23:59:21.445 - INFO - +--- END KW: RestApiTest.Validate Response With Schema (1)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+20190221 23:59:21.445 - INFO - +--- START KW: RestApiTest.Test Api Endpoint [ stores/${id} | GET ]
+20190221 23:59:21.445 - DEBUG - GET http://localhost:3030/stores/8977
+20190221 23:59:21.449 - INFO - ${result} = True
+20190221 23:59:21.449 - INFO - ${response} = {u'city': u'Springfield', u'name': u'Test Create New Store', u'zip': u'55123', u'address2': u'', u'updatedAt': u'2019-02-21T18:29:21.437Z', u'hours': u'Mon: 10-9; Tue: 10-9; Wed: 10-9; Thurs: 10-9; Fr...
+20190221 23:59:21.449 - INFO - +--- END KW: RestApiTest.Test Api Endpoint (4)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+20190221 23:59:21.450 - INFO - +--- START KW: BuiltIn.Run Keyword And Continue On Failure [ should be True | ${result} ]
+20190221 23:59:21.450 - INFO - +---- START KW: BuiltIn.Should Be True [ ${result} ]
+20190221 23:59:21.450 - INFO - +---- END KW: BuiltIn.Should Be True (0)
+20190221 23:59:21.450 - INFO - +--- END KW: BuiltIn.Run Keyword And Continue On Failure (0)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+20190221 23:59:21.451 - INFO - +--- START KW: RestApiTest.Validate Response With Schema [ stores | ${response} ]
+20190221 23:59:21.452 - INFO - {u'title': u'The Root Schema', u'$id': u'http://example.com/root.json', u'required': [u'name', u'address', u'address2', u'city', u'state', u'zip', u'lat', u'lng', u'hours'], u'definitions': {}, u'$schema': u'http://json-schema.org/draft-06/schema#', u'type': u'object', u'properties': {u'city': {u'title': u'The City Schema', u'$id': u'#/properties/city', u'pattern': u'^(.*)$', u'default': u'', u'examples': [u'string'], u'type': u'string'}, u'name': {u'title': u'The Name Schema', u'$id': u'#/properties/name', u'pattern': u'^(.*)$', u'default': u'', u'examples': [u'string'], u'type': u'string'}, u'zip': {u'title': u'The Zip Schema', u'$id': u'#/properties/zip', u'pattern': u'^(.*)$', u'default': u'', u'examples': [u'string'], u'type': u'string'}, u'address2': {u'title': u'The Address2 Schema', u'$id': u'#/properties/address2', u'pattern': u'^(.*)$', u'default': u'', u'examples': [u'string'], u'type': u'string'}, u'hours': {u'title': u'The Hours Schema', u'$id': u'#/properties/hours', u'pattern': u'^(.*)$', u'default': u'', u'examples': [u'string'], u'type': u'string'}, u'state': {u'title': u'The State Schema', u'$id': u'#/properties/state', u'pattern': u'^(.*)$', u'default': u'', u'examples': [u'string'], u'type': u'string'}, u'address': {u'title': u'The Address Schema', u'$id': u'#/properties/address', u'pattern': u'^(.*)$', u'default': u'', u'examples': [u'string'], u'type': u'string'}, u'lat': {u'$id': u'#/properties/lat', u'default': 0.0, u'type': u'number', u'examples': [28.365], u'title': u'The Lat Schema'}, u'lng': {u'$id': u'#/properties/lng', u'default': 0.0, u'type': u'number', u'examples': [-96.4567], u'title': u'The Lng Schema'}}}
+20190221 23:59:21.452 - INFO - +--- END KW: RestApiTest.Validate Response With Schema (1)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+20190221 23:59:21.452 - INFO - +--- START KW: BuiltIn.Set Test Variable [ ${updated_store} | {"name": "Test Update Created Store","type": "BigBox_updated","address": "123 Fake St","address2_updated": "updated","city": "Springfield_updated","state": "MN","zip": "55123","lat": 44.969658,"lng": -93.449539,"hours": "Mon: 10-9; Tue: 10-9; Wed: 10-9; Thurs: 10-9; Fri: 10-9; Sat: 10-9; Sun: 10-8"} ]
+20190221 23:59:21.453 - INFO - ${updated_store} = {"name": "Test Update Created Store","type": "BigBox_updated","address": "123 Fake St","address2_updated": "updated","city": "Springfield_updated","state": "MN","zip": "55123","lat": 44.969658,"lng": ...
+20190221 23:59:21.453 - INFO - +--- END KW: BuiltIn.Set Test Variable (1)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+20190221 23:59:21.453 - INFO - +--- START KW: RestApiTest.Test Api Endpoint [ stores/${id} | PATCH | {} | ${updated_store} ]
+20190221 23:59:21.454 - DEBUG - PATCH http://localhost:3030/stores/8977
+20190221 23:59:21.461 - INFO - ${result} = True
+20190221 23:59:21.461 - INFO - ${response} = {u'city': u'Springfield_updated', u'name': u'Test Update Created Store', u'zip': u'55123', u'address2': u'', u'updatedAt': u'2019-02-21T18:29:21.455Z', u'hours': u'Mon: 10-9; Tue: 10-9; Wed: 10-9; Thu...
+20190221 23:59:21.461 - INFO - +--- END KW: RestApiTest.Test Api Endpoint (8)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+20190221 23:59:21.461 - INFO - +--- START KW: BuiltIn.Run Keyword And Continue On Failure [ should be True | ${result} ]
+20190221 23:59:21.462 - INFO - +---- START KW: BuiltIn.Should Be True [ ${result} ]
+20190221 23:59:21.462 - INFO - +---- END KW: BuiltIn.Should Be True (0)
+20190221 23:59:21.462 - INFO - +--- END KW: BuiltIn.Run Keyword And Continue On Failure (1)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+20190221 23:59:21.462 - INFO - +--- START KW: RestApiTest.Validate Response With Schema [ stores | ${response} ]
+20190221 23:59:21.464 - INFO - {u'title': u'The Root Schema', u'$id': u'http://example.com/root.json', u'required': [u'name', u'address', u'address2', u'city', u'state', u'zip', u'lat', u'lng', u'hours'], u'definitions': {}, u'$schema': u'http://json-schema.org/draft-06/schema#', u'type': u'object', u'properties': {u'city': {u'title': u'The City Schema', u'$id': u'#/properties/city', u'pattern': u'^(.*)$', u'default': u'', u'examples': [u'string'], u'type': u'string'}, u'name': {u'title': u'The Name Schema', u'$id': u'#/properties/name', u'pattern': u'^(.*)$', u'default': u'', u'examples': [u'string'], u'type': u'string'}, u'zip': {u'title': u'The Zip Schema', u'$id': u'#/properties/zip', u'pattern': u'^(.*)$', u'default': u'', u'examples': [u'string'], u'type': u'string'}, u'address2': {u'title': u'The Address2 Schema', u'$id': u'#/properties/address2', u'pattern': u'^(.*)$', u'default': u'', u'examples': [u'string'], u'type': u'string'}, u'hours': {u'title': u'The Hours Schema', u'$id': u'#/properties/hours', u'pattern': u'^(.*)$', u'default': u'', u'examples': [u'string'], u'type': u'string'}, u'state': {u'title': u'The State Schema', u'$id': u'#/properties/state', u'pattern': u'^(.*)$', u'default': u'', u'examples': [u'string'], u'type': u'string'}, u'address': {u'title': u'The Address Schema', u'$id': u'#/properties/address', u'pattern': u'^(.*)$', u'default': u'', u'examples': [u'string'], u'type': u'string'}, u'lat': {u'$id': u'#/properties/lat', u'default': 0.0, u'type': u'number', u'examples': [28.365], u'title': u'The Lat Schema'}, u'lng': {u'$id': u'#/properties/lng', u'default': 0.0, u'type': u'number', u'examples': [-96.4567], u'title': u'The Lng Schema'}}}
+20190221 23:59:21.464 - INFO - +--- END KW: RestApiTest.Validate Response With Schema (2)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+20190221 23:59:21.464 - INFO - +--- START KW: RestApiTest.Test Api Endpoint [ stores/${id} | DELETE ]
+20190221 23:59:21.465 - DEBUG - DELETE http://localhost:3030/stores/8977
+20190221 23:59:21.471 - INFO - ${result} = True
+20190221 23:59:21.471 - INFO - ${response} = {u'city': u'Springfield_updated', u'name': u'Test Update Created Store', u'zip': u'55123', u'address2': u'', u'updatedAt': u'2019-02-21T18:29:21.455Z', u'hours': u'Mon: 10-9; Tue: 10-9; Wed: 10-9; Thu...
+20190221 23:59:21.471 - INFO - +--- END KW: RestApiTest.Test Api Endpoint (7)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+20190221 23:59:21.471 - INFO - +--- START KW: BuiltIn.Run Keyword And Continue On Failure [ should be True | ${result} ]
+20190221 23:59:21.471 - INFO - +---- START KW: BuiltIn.Should Be True [ ${result} ]
+20190221 23:59:21.472 - INFO - +---- END KW: BuiltIn.Should Be True (1)
+20190221 23:59:21.472 - INFO - +--- END KW: BuiltIn.Run Keyword And Continue On Failure (1)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+20190221 23:59:21.472 - INFO - +--- START KW: RestApiTest.Test Api Endpoint [ stores/${id} | GET ]
+20190221 23:59:21.472 - DEBUG - GET http://localhost:3030/stores/8977
+20190221 23:59:21.475 - INFO - ${result} = True
+20190221 23:59:21.475 - INFO - ${response} = {u'className': u'not-found', u'errors': {}, u'message': u"No record found for id '8977'", u'code': 404, u'name': u'NotFound'}
+20190221 23:59:21.476 - INFO - +--- END KW: RestApiTest.Test Api Endpoint (4)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+20190221 23:59:21.476 - INFO - +--- START KW: BuiltIn.Run Keyword And Continue On Failure [ should be True | ${result} ]
+20190221 23:59:21.476 - INFO - +---- START KW: BuiltIn.Should Be True [ ${result} ]
+20190221 23:59:21.476 - INFO - +---- END KW: BuiltIn.Should Be True (0)
+20190221 23:59:21.476 - INFO - +--- END KW: BuiltIn.Run Keyword And Continue On Failure (0)
+------------------------------------------------------------------------------
+20190221 23:59:21.477 - INFO - +-- END TEST: Create , Fetch, Update and Delete New record - POST, GET, PATCH, DELETE | Validate JSON Schema of each of the Responses (47)
+------------------------------------------------------------------------------
+20190221 23:59:21.478 - INFO - +- END SUITE: Categories Endpoint TestSuite & Functional Tests & Products Endpoint TestSuite & Services Endpoint TestSuite & Stores Endpoint TestSuite.Stores Endpoint TestSuite (96)
+==============================================================================
+20190221 23:59:21.480 - INFO - + END SUITE: Categories Endpoint TestSuite & Functional Tests & Products Endpoint TestSuite & Services Endpoint TestSuite & Stores Endpoint TestSuite (1130)
+==============================================================================
